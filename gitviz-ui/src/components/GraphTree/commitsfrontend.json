@@ -1,0 +1,390 @@
+{
+    "repository": "KJSimpleBinding",
+    "branches": [
+        {
+            "branch": "arc",
+            "commits": [
+                {
+                    "commit_hash": "447537699a960c999fae0d9cd721d57a78885776",
+                    "message": "Convert to ARC",
+                    "author": {
+                        "name": "Kristopher Johnson",
+                        "email": "kris@kristopherjohnson.net"
+                    },
+                    "previous_commit": "231d65189e10ce5f606ea0ba9b45545b7d3f1519",
+                    "timestamp": "2012-04-28T15:11:57Z"
+                },
+                {
+                    "commit_hash": "231d65189e10ce5f606ea0ba9b45545b7d3f1519",
+                    "message": "Add test to verify that non-trivial keypaths work",
+                    "author": {
+                        "name": "Kristopher Johnson",
+                        "email": "kris@kristopherjohnson.net"
+                    },
+                    "previous_commit": "ab8ca749907d02d2f02e5db21c9cb17ac913ad55",
+                    "timestamp": "2012-03-24T17:38:57Z"
+                },
+                {
+                    "commit_hash": "ab8ca749907d02d2f02e5db21c9cb17ac913ad55",
+                    "message": "Release _transformBlock in -[KJBinding dealloc]",
+                    "author": {
+                        "name": "Kristopher Johnson",
+                        "email": "kris@kristopherjohnson.net"
+                    },
+                    "previous_commit": "1a1b550e2aaecb04fc7e3d2b68977939a0549c2a",
+                    "timestamp": "2012-03-24T17:30:12Z"
+                },
+                {
+                    "commit_hash": "1a1b550e2aaecb04fc7e3d2b68977939a0549c2a",
+                    "message": "Update screen every tenth of a second",
+                    "author": {
+                        "name": "Kristopher Johnson",
+                        "email": "kris@kristopherjohnson.net"
+                    },
+                    "previous_commit": "9ffe0accdaed09f68151fce450f18eb98943c888",
+                    "timestamp": "2012-03-22T20:39:14Z"
+                },
+                {
+                    "commit_hash": "9ffe0accdaed09f68151fce450f18eb98943c888",
+                    "message": "Remove duplication",
+                    "author": {
+                        "name": "Kristopher Johnson",
+                        "email": "kris@kristopherjohnson.net"
+                    },
+                    "previous_commit": "cb22d7e466b5534cf1a219a7dbff02de64832920",
+                    "timestamp": "2012-03-22T20:38:50Z"
+                },
+                {
+                    "commit_hash": "cb22d7e466b5534cf1a219a7dbff02de64832920",
+                    "message": "Implement value transformer",
+                    "author": {
+                        "name": "Kristopher Johnson",
+                        "email": "kris@kristopherjohnson.net"
+                    },
+                    "previous_commit": "3d2a0c14784c05e7e5a0d2f2178bda9e4641c2cd",
+                    "timestamp": "2012-03-22T20:28:43Z"
+                },
+                {
+                    "commit_hash": "3d2a0c14784c05e7e5a0d2f2178bda9e4641c2cd",
+                    "message": "Update the Future Directions section",
+                    "author": {
+                        "name": "Kristopher Johnson",
+                        "email": "kris@kristopherjohnson.net"
+                    },
+                    "previous_commit": "723f2c75f72e6deb2d930d5d1d258f99f2e030d8",
+                    "timestamp": "2012-03-22T16:54:42Z"
+                },
+                {
+                    "commit_hash": "723f2c75f72e6deb2d930d5d1d258f99f2e030d8",
+                    "message": "Remove xcuserdata",
+                    "author": {
+                        "name": "Kristopher Johnson",
+                        "email": "kris@kristopherjohnson.net"
+                    },
+                    "previous_commit": "1efff35f7d2f68c6797e1c8b18024c599f2bfca2",
+                    "timestamp": "2012-03-22T10:10:59Z"
+                },
+                {
+                    "commit_hash": "1efff35f7d2f68c6797e1c8b18024c599f2bfca2",
+                    "message": "Add license information; fix typos",
+                    "author": {
+                        "name": "Kristopher Johnson",
+                        "email": "kris@kristopherjohnson.net"
+                    },
+                    "previous_commit": "154c9dc099e69ddef3392d4f437c1af84311a57d",
+                    "timestamp": "2012-03-22T10:10:13Z"
+                },
+                {
+                    "commit_hash": "154c9dc099e69ddef3392d4f437c1af84311a57d",
+                    "message": "Add README.markdown",
+                    "author": {
+                        "name": "Kristopher Johnson",
+                        "email": "kris@kristopherjohnson.net"
+                    },
+                    "previous_commit": "56591ea04ba309124b4ab016fa3de041e0cbc45b",
+                    "timestamp": "2012-03-22T09:59:24Z"
+                },
+                {
+                    "commit_hash": "56591ea04ba309124b4ab016fa3de041e0cbc45b",
+                    "message": "Initial commit",
+                    "author": {
+                        "name": "Kristopher Johnson",
+                        "email": "kris@kristopherjohnson.net"
+                    },
+                    "previous_commit": "ebcc3424e4d1bc948696fb3bebe8d001776eb9fd",
+                    "timestamp": "2012-03-22T02:42:35Z"
+                },
+                {
+                    "commit_hash": "ebcc3424e4d1bc948696fb3bebe8d001776eb9fd",
+                    "message": "Initial Commit",
+                    "author": {
+                        "name": "Kristopher Johnson",
+                        "email": "kris@kristopherjohnson.net"
+                    },
+                    "previous_commit": null,
+                    "timestamp": "2012-03-22T00:18:57Z"
+                }
+            ]
+        },
+        {
+            "branch": "master",
+            "commits": [
+                {
+                    "commit_hash": "b03f5255bbc7c5af1b1085103288160fb2ebc1f4",
+                    "message": "Add note about lack of future development",
+                    "author": {
+                        "name": "Kristopher Johnson",
+                        "email": "kris@kristopherjohnson.net"
+                    },
+                    "previous_commit": "b468565c78807986a948461c9446ffee59edcd29",
+                    "timestamp": "2013-09-08T18:37:29Z"
+                },
+                {
+                    "commit_hash": "b468565c78807986a948461c9446ffee59edcd29",
+                    "message": "Add LICENSE file",
+                    "author": {
+                        "name": "Kristopher Johnson",
+                        "email": "kris@kristopherjohnson.net"
+                    },
+                    "previous_commit": "a14f08c7175e66e3f0375c34087cb5ae4a13124b",
+                    "timestamp": "2012-10-09T00:18:50Z"
+                },
+                {
+                    "commit_hash": "a14f08c7175e66e3f0375c34087cb5ae4a13124b",
+                    "message": "Add notes about 'arc' and 'noarc' branches",
+                    "author": {
+                        "name": "Kristopher Johnson",
+                        "email": "kris@kristopherjohnson.net"
+                    },
+                    "previous_commit": "231d65189e10ce5f606ea0ba9b45545b7d3f1519",
+                    "timestamp": "2012-04-28T15:12:57Z"
+                },
+                {
+                    "commit_hash": "231d65189e10ce5f606ea0ba9b45545b7d3f1519",
+                    "message": "Add test to verify that non-trivial keypaths work",
+                    "author": {
+                        "name": "Kristopher Johnson",
+                        "email": "kris@kristopherjohnson.net"
+                    },
+                    "previous_commit": "ab8ca749907d02d2f02e5db21c9cb17ac913ad55",
+                    "timestamp": "2012-03-24T17:38:57Z"
+                },
+                {
+                    "commit_hash": "ab8ca749907d02d2f02e5db21c9cb17ac913ad55",
+                    "message": "Release _transformBlock in -[KJBinding dealloc]",
+                    "author": {
+                        "name": "Kristopher Johnson",
+                        "email": "kris@kristopherjohnson.net"
+                    },
+                    "previous_commit": "1a1b550e2aaecb04fc7e3d2b68977939a0549c2a",
+                    "timestamp": "2012-03-24T17:30:12Z"
+                },
+                {
+                    "commit_hash": "1a1b550e2aaecb04fc7e3d2b68977939a0549c2a",
+                    "message": "Update screen every tenth of a second",
+                    "author": {
+                        "name": "Kristopher Johnson",
+                        "email": "kris@kristopherjohnson.net"
+                    },
+                    "previous_commit": "9ffe0accdaed09f68151fce450f18eb98943c888",
+                    "timestamp": "2012-03-22T20:39:14Z"
+                },
+                {
+                    "commit_hash": "9ffe0accdaed09f68151fce450f18eb98943c888",
+                    "message": "Remove duplication",
+                    "author": {
+                        "name": "Kristopher Johnson",
+                        "email": "kris@kristopherjohnson.net"
+                    },
+                    "previous_commit": "cb22d7e466b5534cf1a219a7dbff02de64832920",
+                    "timestamp": "2012-03-22T20:38:50Z"
+                },
+                {
+                    "commit_hash": "cb22d7e466b5534cf1a219a7dbff02de64832920",
+                    "message": "Implement value transformer",
+                    "author": {
+                        "name": "Kristopher Johnson",
+                        "email": "kris@kristopherjohnson.net"
+                    },
+                    "previous_commit": "3d2a0c14784c05e7e5a0d2f2178bda9e4641c2cd",
+                    "timestamp": "2012-03-22T20:28:43Z"
+                },
+                {
+                    "commit_hash": "3d2a0c14784c05e7e5a0d2f2178bda9e4641c2cd",
+                    "message": "Update the Future Directions section",
+                    "author": {
+                        "name": "Kristopher Johnson",
+                        "email": "kris@kristopherjohnson.net"
+                    },
+                    "previous_commit": "723f2c75f72e6deb2d930d5d1d258f99f2e030d8",
+                    "timestamp": "2012-03-22T16:54:42Z"
+                },
+                {
+                    "commit_hash": "723f2c75f72e6deb2d930d5d1d258f99f2e030d8",
+                    "message": "Remove xcuserdata",
+                    "author": {
+                        "name": "Kristopher Johnson",
+                        "email": "kris@kristopherjohnson.net"
+                    },
+                    "previous_commit": "1efff35f7d2f68c6797e1c8b18024c599f2bfca2",
+                    "timestamp": "2012-03-22T10:10:59Z"
+                },
+                {
+                    "commit_hash": "1efff35f7d2f68c6797e1c8b18024c599f2bfca2",
+                    "message": "Add license information; fix typos",
+                    "author": {
+                        "name": "Kristopher Johnson",
+                        "email": "kris@kristopherjohnson.net"
+                    },
+                    "previous_commit": "154c9dc099e69ddef3392d4f437c1af84311a57d",
+                    "timestamp": "2012-03-22T10:10:13Z"
+                },
+                {
+                    "commit_hash": "154c9dc099e69ddef3392d4f437c1af84311a57d",
+                    "message": "Add README.markdown",
+                    "author": {
+                        "name": "Kristopher Johnson",
+                        "email": "kris@kristopherjohnson.net"
+                    },
+                    "previous_commit": "56591ea04ba309124b4ab016fa3de041e0cbc45b",
+                    "timestamp": "2012-03-22T09:59:24Z"
+                },
+                {
+                    "commit_hash": "56591ea04ba309124b4ab016fa3de041e0cbc45b",
+                    "message": "Initial commit",
+                    "author": {
+                        "name": "Kristopher Johnson",
+                        "email": "kris@kristopherjohnson.net"
+                    },
+                    "previous_commit": "ebcc3424e4d1bc948696fb3bebe8d001776eb9fd",
+                    "timestamp": "2012-03-22T02:42:35Z"
+                },
+                {
+                    "commit_hash": "ebcc3424e4d1bc948696fb3bebe8d001776eb9fd",
+                    "message": "Initial Commit",
+                    "author": {
+                        "name": "Kristopher Johnson",
+                        "email": "kris@kristopherjohnson.net"
+                    },
+                    "previous_commit": null,
+                    "timestamp": "2012-03-22T00:18:57Z"
+                }
+            ]
+        },
+        {
+            "branch": "noarc",
+            "commits": [
+                {
+                    "commit_hash": "231d65189e10ce5f606ea0ba9b45545b7d3f1519",
+                    "message": "Add test to verify that non-trivial keypaths work",
+                    "author": {
+                        "name": "Kristopher Johnson",
+                        "email": "kris@kristopherjohnson.net"
+                    },
+                    "previous_commit": "ab8ca749907d02d2f02e5db21c9cb17ac913ad55",
+                    "timestamp": "2012-03-24T17:38:57Z"
+                },
+                {
+                    "commit_hash": "ab8ca749907d02d2f02e5db21c9cb17ac913ad55",
+                    "message": "Release _transformBlock in -[KJBinding dealloc]",
+                    "author": {
+                        "name": "Kristopher Johnson",
+                        "email": "kris@kristopherjohnson.net"
+                    },
+                    "previous_commit": "1a1b550e2aaecb04fc7e3d2b68977939a0549c2a",
+                    "timestamp": "2012-03-24T17:30:12Z"
+                },
+                {
+                    "commit_hash": "1a1b550e2aaecb04fc7e3d2b68977939a0549c2a",
+                    "message": "Update screen every tenth of a second",
+                    "author": {
+                        "name": "Kristopher Johnson",
+                        "email": "kris@kristopherjohnson.net"
+                    },
+                    "previous_commit": "9ffe0accdaed09f68151fce450f18eb98943c888",
+                    "timestamp": "2012-03-22T20:39:14Z"
+                },
+                {
+                    "commit_hash": "9ffe0accdaed09f68151fce450f18eb98943c888",
+                    "message": "Remove duplication",
+                    "author": {
+                        "name": "Kristopher Johnson",
+                        "email": "kris@kristopherjohnson.net"
+                    },
+                    "previous_commit": "cb22d7e466b5534cf1a219a7dbff02de64832920",
+                    "timestamp": "2012-03-22T20:38:50Z"
+                },
+                {
+                    "commit_hash": "cb22d7e466b5534cf1a219a7dbff02de64832920",
+                    "message": "Implement value transformer",
+                    "author": {
+                        "name": "Kristopher Johnson",
+                        "email": "kris@kristopherjohnson.net"
+                    },
+                    "previous_commit": "3d2a0c14784c05e7e5a0d2f2178bda9e4641c2cd",
+                    "timestamp": "2012-03-22T20:28:43Z"
+                },
+                {
+                    "commit_hash": "3d2a0c14784c05e7e5a0d2f2178bda9e4641c2cd",
+                    "message": "Update the Future Directions section",
+                    "author": {
+                        "name": "Kristopher Johnson",
+                        "email": "kris@kristopherjohnson.net"
+                    },
+                    "previous_commit": "723f2c75f72e6deb2d930d5d1d258f99f2e030d8",
+                    "timestamp": "2012-03-22T16:54:42Z"
+                },
+                {
+                    "commit_hash": "723f2c75f72e6deb2d930d5d1d258f99f2e030d8",
+                    "message": "Remove xcuserdata",
+                    "author": {
+                        "name": "Kristopher Johnson",
+                        "email": "kris@kristopherjohnson.net"
+                    },
+                    "previous_commit": "1efff35f7d2f68c6797e1c8b18024c599f2bfca2",
+                    "timestamp": "2012-03-22T10:10:59Z"
+                },
+                {
+                    "commit_hash": "1efff35f7d2f68c6797e1c8b18024c599f2bfca2",
+                    "message": "Add license information; fix typos",
+                    "author": {
+                        "name": "Kristopher Johnson",
+                        "email": "kris@kristopherjohnson.net"
+                    },
+                    "previous_commit": "154c9dc099e69ddef3392d4f437c1af84311a57d",
+                    "timestamp": "2012-03-22T10:10:13Z"
+                },
+                {
+                    "commit_hash": "154c9dc099e69ddef3392d4f437c1af84311a57d",
+                    "message": "Add README.markdown",
+                    "author": {
+                        "name": "Kristopher Johnson",
+                        "email": "kris@kristopherjohnson.net"
+                    },
+                    "previous_commit": "56591ea04ba309124b4ab016fa3de041e0cbc45b",
+                    "timestamp": "2012-03-22T09:59:24Z"
+                },
+                {
+                    "commit_hash": "56591ea04ba309124b4ab016fa3de041e0cbc45b",
+                    "message": "Initial commit",
+                    "author": {
+                        "name": "Kristopher Johnson",
+                        "email": "kris@kristopherjohnson.net"
+                    },
+                    "previous_commit": "ebcc3424e4d1bc948696fb3bebe8d001776eb9fd",
+                    "timestamp": "2012-03-22T02:42:35Z"
+                },
+                {
+                    "commit_hash": "ebcc3424e4d1bc948696fb3bebe8d001776eb9fd",
+                    "message": "Initial Commit",
+                    "author": {
+                        "name": "Kristopher Johnson",
+                        "email": "kris@kristopherjohnson.net"
+                    },
+                    "previous_commit": null,
+                    "timestamp": "2012-03-22T00:18:57Z"
+                }
+            ]
+        }
+    ]
+}
