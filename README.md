@@ -1,10 +1,10 @@
-# GitViz 🔍💻
+# GitLlama 🔍💻
 
-GitViz is an AI-powered tool that revolutionizes how developers interact with and understand Git repositories.
+GitLlama is an AI-powered tool that revolutionizes how developers interact with and understand Git repositories.
 
 ## Inspiration
 
-The inspiration for GitViz came from common pain points in software development:
+The inspiration for GitLlama came from common pain points in software development:
 
 1. Code Review Complexity: Developers often struggle to quickly understand the context and impact of changes in pull requests, especially for large commits.
 
@@ -56,12 +56,13 @@ These challenges inspired us to create a tool that leverages AI to provide quick
 - Pinecone
 - React
 - Git
+- Together ai
 
 ### Installation
 
 1. Clone the repo
    ```sh
-   git clone https://github.com/yourusername/GitViz.git
+   git clone https://github.com/yourusername/GitLlama.git
 
 2. Install Python dependencies
    ```sh
@@ -83,7 +84,7 @@ These challenges inspired us to create a tool that leverages AI to provide quick
     npm start
 
 
-Visit http://localhost:5173 to see GitViz in action!
+Visit http://localhost:5173 to see GitLlama in action!
 🎮 Usage
 Chatbot Interface
 
