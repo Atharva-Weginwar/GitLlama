@@ -85,22 +85,119 @@ def summarize_repository(commit_chain):
 
     combined_summary = "\n".join(commit_summaries)
 
+    # prompt = f"""
+    # Analyze the following summary of commits from a Git repository and provide a comprehensive overview:
+
+    # {combined_summary}
+
+    # Please provide a detailed summary of the repository's development, including:
+    # 1. Main themes or areas of development across these commits
+    # 2. Significant features or changes introduced over time
+    # 3. Patterns in development practices or coding styles
+    # 4. The overall direction or goals of the project based on these changes
+    # 5. Potential challenges or areas of focus for future development
+    # 6. Any notable trends in commit frequency or size
+
+    # For each point, start with the bold heading (e.g., "**1. Main themes or areas of development across these commits:**") followed by your analysis on a new line.
+    # Provide a thorough and insightful analysis of the repository's evolution and current state.
+    # """
+#     prompt = f"""
+# Analyze the following summary of commits from a Git repository and provide a comprehensive overview:
+
+# {combined_summary}
+
+# Please provide a detailed summary of the repository's development, including:
+
+# 1. Main themes or areas of development across these commits
+# 2. Significant features or changes introduced over time
+# 3. Patterns in development practices or coding styles
+# 4. The overall direction or goals of the project based on these changes
+# 5. Potential challenges or areas of focus for future development
+# 6. Any notable trends in commit frequency or size
+
+# Instructions:
+
+# - Start each point with the numbered heading (e.g., "1. Main themes or areas of development across these commits:") followed by your analysis on a new line.
+# - Reference specific commits or changes where appropriate to support your analysis.
+# - Use only the information provided in the commit summaries. Do not include assumptions or external information.
+# - Provide your analysis in a professional and analytical tone suitable for a technical audience.
+
+# **Example Output:**
+
+# 1. Main themes or areas of development across these commits:
+# [Your analysis here]
+
+# 2. Significant features or changes introduced over time:
+# [Your analysis here]
+
+# ...and so on for each point.
+# """
     prompt = f"""
-    Analyze the following summary of commits from a Git repository and provide a comprehensive overview:
+Analyze the following summary of commits and issues from a Git repository and provide a comprehensive overview:
 
-    {combined_summary}
+{combined_summary}
 
-    Please provide a detailed summary of the repository's development, including:
-    1. Main themes or areas of development across these commits
-    2. Significant features or changes introduced over time
-    3. Patterns in development practices or coding styles
-    4. The overall direction or goals of the project based on these changes
-    5. Potential challenges or areas of focus for future development
-    6. Any notable trends in commit frequency or size
+Please provide a detailed summary of the repository's development, including:
 
-    For each point, start with the bold heading (e.g., "**1. Main themes or areas of development across these commits:**") followed by your analysis on a new line.
-    Provide a thorough and insightful analysis of the repository's evolution and current state.
-    """
+1. Main themes or areas of development across these commits
+2. Significant features or changes introduced over time
+3. Patterns in development practices or coding styles
+4. The overall direction or goals of the project based on these changes
+5. Potential challenges or areas of focus for future development
+6. Any notable trends in commit frequency or size
+7. Critical Issues Analysis (if issues exist in repository)
+
+Instructions:
+
+- Start each point with the numbered heading (e.g., "1. Main themes or areas of development across these commits:") followed by your analysis on a new line.
+- Reference specific commits or changes where appropriate to support your analysis.
+- Use only the information provided in the commit and issue summaries. Do not include assumptions or external information.
+- For issue analysis (Point 7), include only if issues exist in the repository data:
+  * Summarize top 5 critical issues with their current status (open/closed)
+  * Analyze technical root causes based on related commits and patch files
+  * Provide solution suggestions based on the existing tech stack
+  * Include implementation recommendations with specific technical approaches
+- Provide your analysis in a professional and analytical tone suitable for a technical audience.
+
+**Example Output:**
+
+1. Main themes or areas of development across these commits:
+[Your analysis here]
+
+2. Significant features or changes introduced over time:
+[Your analysis here]
+
+3. Patterns in development practices or coding styles:
+[Your analysis here]
+
+4. The overall direction or goals of the project based on these changes:
+[Your analysis here]
+
+5. Potential challenges or areas of focus for future development:
+[Your analysis here]
+
+6. Any notable trends in commit frequency or size:
+[Your analysis here]
+
+7. Critical Issues Analysis:
+[Only included if issues exist in repository]
+
+Critical Issue #1: [Issue Title]
+- Status: [Open/Closed]
+- Technical Context: [Analysis based on commits and patches]
+- Root Cause: [Technical analysis]
+- Suggested Solution: [Technical approach based on codebase]
+- Implementation Guide: [Specific steps and considerations]
+
+[Repeat for up to 5 critical issues]
+
+Technical Recommendations:
+- [Technology-specific suggestions]
+- [Implementation best practices]
+- [Integration considerations]
+
+Note: If no issues exist in the repository data, section 7 will be omitted from the analysis.
+"""
 
     try:
         response = client.chat.completions.create(
