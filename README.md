@@ -1,4 +1,4 @@
-# GitLlama 🔍💻
+ ![GitLlama Logo](Logo.jpeg)
 
 GitLlama is an AI-powered tool that revolutionizes how developers interact with and understand Git repositories.
 
