@@ -42,8 +42,8 @@ These challenges inspired us to create a tool that leverages AI to provide quick
 - **Frontend:** [React](https://reactjs.org/)
 - **Backend:** [Flask](https://flask.palletsprojects.com/)
 - **AI/ML:** 
-  - [LlamaIndex](https://github.com/jerryjliu/llama_index) for efficient code indexing and querying
   - [Pinecone](https://www.pinecone.io/) for vector search capabilities
+  - [Together AI](https://www.together.ai/) for LLama3.2 endpoint
 - **Version Control:** Git (via [GitPython](https://gitpython.readthedocs.io/))
 
 ## 🏁 Getting Started
@@ -62,7 +62,7 @@ These challenges inspired us to create a tool that leverages AI to provide quick
 
 1. Clone the repo
    ```sh
-   git clone https://github.com/yourusername/GitLlama.git
+   git clone https://github.com/Atharva-Weginwar/GitLlama.git
 
 2. Install Python dependencies
    ```sh
