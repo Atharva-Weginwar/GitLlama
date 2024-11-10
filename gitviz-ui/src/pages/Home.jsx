@@ -30,8 +30,8 @@ const Home = () => {
       className="flex flex-col items-center justify-center w-full h-full bg-cover"
       style={{ backgroundImage: "url('../src/assets/background.jpg')" }}
     >
-      <Header />
-      <h1 className="text-white text-2xl mt-10 animate-fadeIn">AGENTIC RAG-A-THON</h1>
+      <Header />  
+      <h1 className="text-white text-2xl mt-10 animate-fadeIn"></h1>
       <div className="flex flex-1 items-center justify-center w-full text-center">
         <form onSubmit={() => handleSubmit()} className="max-w-[700px] w-full animate-fadeIn">
           <label
