@@ -1,0 +1,17 @@
+curl -X POST "http://localhost:5000/api/reset-pinecone-index"
+
+curl -X GET "http://localhost:5000/api/process-github-repo?url=https://github.com/pvbgeek/AI-based-System-Design-Builder"
+
+curl -X POST "http://localhost:5000/api/push-commits-to-pinecone"
+
+curl -X GET "http://localhost:5000/api/analyze-commit?commit_id=fa34d6522869d5bb175b5436139760b5a0e77cfe"
+
+curl -X GET "http://localhost:5000/api/analyze-repository?url=https://github.com/pvbgeek/AI-based-System-Design-Builder"
+
+curl -X GET "http://localhost:5000/api/run-rag?query=Tell%20me%20about%20all%20the%20commits%20related%20to%20the%20README%20file%20in%20this%20repository"
+
+curl -X GET "http://localhost:5000/api/run-rag?query=Tell%20me%20about%20all%20the%20commits%20related%20to%20the%20README%20file%20in%20this%20repository"
+
+curl -X GET "http://localhost:5000/api/run-rag?query=Tell me about all the commits related to the README file in this repository"
+
+

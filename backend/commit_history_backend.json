@@ -1,0 +1,716 @@
+{"repository": "Student-Ranking-System", "branches": [
+{
+    "branch": "Pair_approach",
+    "commits": [
+        {
+            "commit_hash": "c8707f0b3d9818d98be4aac37a12c09faeb4d0a3",
+            "message": "Slow Rendering issue fixed\n\nThe pair approach is faster than the array approach because of tight binding.",
+            "author": {
+                "name": "KvAney",
+                "email": "87108234+KvAney@users.noreply.github.com"
+            },
+            "timestamp": "2024-11-10T08:50:51+00:00",
+            "previous_commit": "1658a30099dd0d3c1a328a1407507205ca1413ad",
+            "files_changed": [
+                {
+                    "filename": "ListRanking.cpp",
+                    "status": "modified",
+                    "additions": 21,
+                    "deletions": 31,
+                    "changes": 52,
+                    "patch": "@@ -1,56 +1,46 @@\n #include <bits/stdc++.h>\n using namespace std;\n \n+void sortPair(vector<pair<string,int>>&t)\n+{\n+\n+    sort(t.begin(), t.end(), [](const pair<string, int> &a, const pair<string, int> &b) {\n+        return a.second > b.second; // Compare by marks in descending order\n+    });\n+\n+}\n+\n int main() {\n \n     int Sc;\n     cout<<\"Enter student count :\";\n-    cin>>Sc;\n-   \n-    string std[Sc];\n+    cin>>Sc;  \n+    vector<pair<string,int>> std;\n+\n+    //Taking input as a pair of Student name and marks\n     for(int i = 0 ; i < Sc; i++)\n     {\n         cout<<\"Enter  name of student\\n:\";\n         string name;\n         cin>>name;\n-        std[i]=name;\n-    }\n-\n-   \n-    int stdm[Sc];\n-     for(int i = 0 ; i < Sc; i++)\n-    {\n-          cout<<\"Enter  Marks of student\\n:\";\n+        cout<<\"Enter  Marks of student\\n:\";\n         int mark;\n         cin>>mark;\n-        stdm[i]=mark;\n+        std.push_back(make_pair(name,mark));\n     }\n- cout <<\" Will  be logging with student data\"<<endl;\n+\n cout<<\"Printing initial List\\n\";\n \n-    for(int i = 0 ; i < Sc;i++ )\n+    for(auto i: std )\n     {\n-        cout<<\"Student Name :\" <<std[i]<<\" Marks : \"<<stdm[i]<<endl;\n+        cout<<\"Student Name :\" << i.first <<\" Marks: \"<<i.second <<endl;\n     }\n \n-    for (int i = 0; i < Sc - 1; i++) {\n-        int maxIndex = i;\n-        for (int j = i + 1; j < Sc; j++) {\n-            if (stdm[j] > stdm[maxIndex]) {\n-                maxIndex = j;\n-            }\n-        }\n-        \n-        cout<<stdm[i] <<\" Will  be swapped with \"<<  stdm[maxIndex] <<endl;\n-        swap(stdm[i], stdm[maxIndex]);\n-        \n-        cout<<\"Correspinding names -> \"<<std[i] <<\" Will be swapped with \"<<  std[maxIndex] <<endl;\n-        swap(std[i], std[maxIndex]);\n-    }\n+    sortPair(std);\n \n     cout << \"Printing sorted list in descending order of marks:\\n\";\n-    for (int i = 0; i < Sc; i++) {\n-        cout << \"Student Name: \" << std[i] << \" Marks: \" << stdm[i] << endl;\n+    for (auto i: std ){\n+        cout << \"Student Name: \" << i.first <<\" Marks: \"<<i.second <<endl;\n     }\n \n     return 0;"
+                }
+            ]
+        },
+        {
+            "commit_hash": "1658a30099dd0d3c1a328a1407507205ca1413ad",
+            "message": "Logging to understand code",
+            "author": {
+                "name": "KvAney",
+                "email": "kaiwalya.aney@gmail.com"
+            },
+            "timestamp": "2024-11-10T08:42:48+00:00",
+            "previous_commit": "1509f29421ed0c97722ffe70fd3a4aa8f76d3b62",
+            "files_changed": [
+                {
+                    "filename": "ListRanking.cpp",
+                    "status": "modified",
+                    "additions": 2,
+                    "deletions": 2,
+                    "changes": 4,
+                    "patch": "@@ -25,7 +25,7 @@ int main() {\n         cin>>mark;\n         stdm[i]=mark;\n     }\n-\n+ cout <<\" Will  be logging with student data\"<<endl;\n cout<<\"Printing initial List\\n\";\n \n     for(int i = 0 ; i < Sc;i++ )\n@@ -41,7 +41,7 @@ cout<<\"Printing initial List\\n\";\n             }\n         }\n         \n-        cout<<stdm[i] <<\" Will be swapped with \"<<  stdm[maxIndex] <<endl;\n+        cout<<stdm[i] <<\" Will  be swapped with \"<<  stdm[maxIndex] <<endl;\n         swap(stdm[i], stdm[maxIndex]);\n         \n         cout<<\"Correspinding names -> \"<<std[i] <<\" Will be swapped with \"<<  std[maxIndex] <<endl;"
+                }
+            ]
+        },
+        {
+            "commit_hash": "1509f29421ed0c97722ffe70fd3a4aa8f76d3b62",
+            "message": "Logging for understanding of code",
+            "author": {
+                "name": "KvAney",
+                "email": "kaiwalya.aney@gmail.com"
+            },
+            "timestamp": "2024-11-10T08:28:51+00:00",
+            "previous_commit": "44ea4b589ba8be3bf0d285869fbcf7239272f8a1",
+            "files_changed": [
+                {
+                    "filename": ".vscode/c_cpp_properties.json",
+                    "status": "added",
+                    "additions": 18,
+                    "deletions": 0,
+                    "changes": 18,
+                    "patch": "@@ -0,0 +1,18 @@\n+{\n+  \"configurations\": [\n+    {\n+      \"name\": \"windows-gcc-x64\",\n+      \"includePath\": [\n+        \"${workspaceFolder}/**\"\n+      ],\n+      \"compilerPath\": \"C:/Program Files/Mingw/mingw64/bin/gcc.exe\",\n+      \"cStandard\": \"${default}\",\n+      \"cppStandard\": \"${default}\",\n+      \"intelliSenseMode\": \"windows-gcc-x64\",\n+      \"compilerArgs\": [\n+        \"\"\n+      ]\n+    }\n+  ],\n+  \"version\": 4\n+}\n\\ No newline at end of file"
+                },
+                {
+                    "filename": ".vscode/launch.json",
+                    "status": "added",
+                    "additions": 24,
+                    "deletions": 0,
+                    "changes": 24,
+                    "patch": "@@ -0,0 +1,24 @@\n+{\n+  \"version\": \"0.2.0\",\n+  \"configurations\": [\n+    {\n+      \"name\": \"C/C++ Runner: Debug Session\",\n+      \"type\": \"cppdbg\",\n+      \"request\": \"launch\",\n+      \"args\": [],\n+      \"stopAtEntry\": false,\n+      \"externalConsole\": true,\n+      \"cwd\": \"f:/Temp_da/Student-Ranking-System\",\n+      \"program\": \"f:/Temp_da/Student-Ranking-System/build/Debug/outDebug\",\n+      \"MIMode\": \"gdb\",\n+      \"miDebuggerPath\": \"gdb\",\n+      \"setupCommands\": [\n+        {\n+          \"description\": \"Enable pretty-printing for gdb\",\n+          \"text\": \"-enable-pretty-printing\",\n+          \"ignoreFailures\": true\n+        }\n+      ]\n+    }\n+  ]\n+}\n\\ No newline at end of file"
+                },
+                {
+                    "filename": ".vscode/settings.json",
+                    "status": "added",
+                    "additions": 62,
+                    "deletions": 0,
+                    "changes": 62,
+                    "patch": "@@ -0,0 +1,62 @@\n+{\n+  \"C_Cpp_Runner.cCompilerPath\": \"gcc\",\n+  \"C_Cpp_Runner.cppCompilerPath\": \"g++\",\n+  \"C_Cpp_Runner.debuggerPath\": \"gdb\",\n+  \"C_Cpp_Runner.cStandard\": \"\",\n+  \"C_Cpp_Runner.cppStandard\": \"\",\n+  \"C_Cpp_Runner.msvcBatchPath\": \"C:/Program Files/Microsoft Visual Studio/VR_NR/Community/VC/Auxiliary/Build/vcvarsall.bat\",\n+  \"C_Cpp_Runner.useMsvc\": false,\n+  \"C_Cpp_Runner.warnings\": [\n+    \"-Wall\",\n+    \"-Wextra\",\n+    \"-Wpedantic\",\n+    \"-Wshadow\",\n+    \"-Wformat=2\",\n+    \"-Wcast-align\",\n+    \"-Wconversion\",\n+    \"-Wsign-conversion\",\n+    \"-Wnull-dereference\"\n+  ],\n+  \"C_Cpp_Runner.msvcWarnings\": [\n+    \"/W4\",\n+    \"/permissive-\",\n+    \"/w14242\",\n+    \"/w14287\",\n+    \"/w14296\",\n+    \"/w14311\",\n+    \"/w14826\",\n+    \"/w44062\",\n+    \"/w44242\",\n+    \"/w14905\",\n+    \"/w14906\",\n+    \"/w14263\",\n+    \"/w44265\",\n+    \"/w14928\"\n+  ],\n+  \"C_Cpp_Runner.enableWarnings\": true,\n+  \"C_Cpp_Runner.warningsAsError\": false,\n+  \"C_Cpp_Runner.compilerArgs\": [],\n+  \"C_Cpp_Runner.linkerArgs\": [],\n+  \"C_Cpp_Runner.includePaths\": [],\n+  \"C_Cpp_Runner.includeSearch\": [\n+    \"*\",\n+    \"**/*\"\n+  ],\n+  \"C_Cpp_Runner.excludeSearch\": [\n+    \"**/build\",\n+    \"**/build/**\",\n+    \"**/.*\",\n+    \"**/.*/**\",\n+    \"**/.vscode\",\n+    \"**/.vscode/**\"\n+  ],\n+  \"C_Cpp_Runner.useAddressSanitizer\": false,\n+  \"C_Cpp_Runner.useUndefinedSanitizer\": false,\n+  \"C_Cpp_Runner.useLeakSanitizer\": false,\n+  \"C_Cpp_Runner.showCompilationTime\": false,\n+  \"C_Cpp_Runner.useLinkTimeOptimization\": false,\n+  \"C_Cpp_Runner.msvcSecureNoWarnings\": false,\n+  \"files.associations\": {\n+    \"iostream\": \"cpp\"\n+  }\n+}\n\\ No newline at end of file"
+                },
+                {
+                    "filename": "ListRanking.cpp",
+                    "status": "modified",
+                    "additions": 3,
+                    "deletions": 1,
+                    "changes": 4,
+                    "patch": "@@ -30,7 +30,7 @@ cout<<\"Printing initial List\\n\";\n \n     for(int i = 0 ; i < Sc;i++ )\n     {\n-        cout<<\"Student Name :\" <<std[i]<<\" Marks: \"<<stdm[i]<<endl;\n+        cout<<\"Student Name :\" <<std[i]<<\" Marks : \"<<stdm[i]<<endl;\n     }\n \n     for (int i = 0; i < Sc - 1; i++) {\n@@ -41,8 +41,10 @@ cout<<\"Printing initial List\\n\";\n             }\n         }\n         \n+        cout<<stdm[i] <<\" Will be swapped with \"<<  stdm[maxIndex] <<endl;\n         swap(stdm[i], stdm[maxIndex]);\n         \n+        cout<<\"Correspinding names -> \"<<std[i] <<\" Will be swapped with \"<<  std[maxIndex] <<endl;\n         swap(std[i], std[maxIndex]);\n     }\n "
+                }
+            ]
+        },
+        {
+            "commit_hash": "44ea4b589ba8be3bf0d285869fbcf7239272f8a1",
+            "message": "Wrote logic of Selection sort to create a descending ranking list on basis of Marks.\n\nUsed Selection Sort algorithm to swap and sort the student details.",
+            "author": {
+                "name": "MichTechAahe02",
+                "email": "michaahe20192@gmail.com"
+            },
+            "timestamp": "2024-11-10T08:04:08+00:00",
+            "previous_commit": "284ac5528f2d605559da3505bcbfe00a5e09422e",
+            "files_changed": [
+                {
+                    "filename": "ListRanking.cpp",
+                    "status": "modified",
+                    "additions": 20,
+                    "deletions": 2,
+                    "changes": 22,
+                    "patch": "@@ -32,6 +32,24 @@ cout<<\"Printing initial List\\n\";\n     {\n         cout<<\"Student Name :\" <<std[i]<<\" Marks: \"<<stdm[i]<<endl;\n     }\n-return 0;\n-}\n \n+    for (int i = 0; i < Sc - 1; i++) {\n+        int maxIndex = i;\n+        for (int j = i + 1; j < Sc; j++) {\n+            if (stdm[j] > stdm[maxIndex]) {\n+                maxIndex = j;\n+            }\n+        }\n+        \n+        swap(stdm[i], stdm[maxIndex]);\n+        \n+        swap(std[i], std[maxIndex]);\n+    }\n+\n+    cout << \"Printing sorted list in descending order of marks:\\n\";\n+    for (int i = 0; i < Sc; i++) {\n+        cout << \"Student Name: \" << std[i] << \" Marks: \" << stdm[i] << endl;\n+    }\n+\n+    return 0;\n+}"
+                }
+            ]
+        },
+        {
+            "commit_hash": "284ac5528f2d605559da3505bcbfe00a5e09422e",
+            "message": "Initialize data structures to take input of name and mark of students\n\nHas for loops for inputting student name data & marks data.",
+            "author": {
+                "name": "MichTechAahe02",
+                "email": "michaahe20192@gmail.com"
+            },
+            "timestamp": "2024-11-10T08:01:16+00:00",
+            "previous_commit": "6488f68847de66d8170c4ba82759a645570ecda5",
+            "files_changed": [
+                {
+                    "filename": "ListRanking.cpp",
+                    "status": "added",
+                    "additions": 37,
+                    "deletions": 0,
+                    "changes": 37,
+                    "patch": "@@ -0,0 +1,37 @@\n+#include <bits/stdc++.h>\n+using namespace std;\n+\n+int main() {\n+\n+    int Sc;\n+    cout<<\"Enter student count :\";\n+    cin>>Sc;\n+   \n+    string std[Sc];\n+    for(int i = 0 ; i < Sc; i++)\n+    {\n+        cout<<\"Enter  name of student\\n:\";\n+        string name;\n+        cin>>name;\n+        std[i]=name;\n+    }\n+\n+   \n+    int stdm[Sc];\n+     for(int i = 0 ; i < Sc; i++)\n+    {\n+          cout<<\"Enter  Marks of student\\n:\";\n+        int mark;\n+        cin>>mark;\n+        stdm[i]=mark;\n+    }\n+\n+cout<<\"Printing initial List\\n\";\n+\n+    for(int i = 0 ; i < Sc;i++ )\n+    {\n+        cout<<\"Student Name :\" <<std[i]<<\" Marks: \"<<stdm[i]<<endl;\n+    }\n+return 0;\n+}\n+"
+                }
+            ]
+        },
+        {
+            "commit_hash": "6488f68847de66d8170c4ba82759a645570ecda5",
+            "message": "initialize Readme.txt with title of project",
+            "author": {
+                "name": "MichTechAahe02",
+                "email": "michaahe20192@gmail.com"
+            },
+            "timestamp": "2024-11-10T07:57:26+00:00",
+            "previous_commit": null,
+            "files_changed": [
+                {
+                    "filename": "Readme.txt",
+                    "status": "added",
+                    "additions": 1,
+                    "deletions": 0,
+                    "changes": 1,
+                    "patch": "@@ -0,0 +1 @@\n+This project is to Rank the student"
+                }
+            ]
+        }
+    ]
+},
+{
+    "branch": "St_detail",
+    "commits": [
+        {
+            "commit_hash": "5ff9bccc6b83c356f450f500a79844fba46b5f75",
+            "message": "Update ListRanking.cpp with updated getline",
+            "author": {
+                "name": "TechnoGeek013",
+                "email": "michaahe20191@gmail.com"
+            },
+            "timestamp": "2024-11-10T09:31:47+00:00",
+            "previous_commit": "79c6c8fbdfa79a3d745ffd6fa67df68e22b42ffe",
+            "files_changed": [
+                {
+                    "filename": "ListRanking.cpp",
+                    "status": "modified",
+                    "additions": 6,
+                    "deletions": 5,
+                    "changes": 11,
+                    "patch": "@@ -15,17 +15,16 @@ int main() {\n     int Sc;\n     cout<<\"Enter student count :\";\n     cin>>Sc;  \n+     cin.ignore();\n+\n     vector<pair<string,int>> std;\n \n     //Taking input as a pair of Student name and marks\n     for(int i = 0 ; i < Sc; i++)\n     {\n-        cout<<\"Enter  Firstname of student\\n:\";\n+        cout<<\"Enter  Full Name of student\\n:\";\n         string name;\n-        cin>>name;\n-        cout<<\"Enter  Lastname of student\\n:\";\n-        string lname;\n-        cin>>lname;\n+        getline(cin,name);\n         \n \n //Concatenation of name and lastname \n@@ -34,6 +33,8 @@ int main() {\n         cout<<\"Enter  Marks of student\\n:\";\n         int mark;\n         cin>>mark;\n+        cin.ignore();\n+\n         std.push_back(make_pair(full_name,mark));\n     }\n "
+                }
+            ]
+        },
+        {
+            "commit_hash": "79c6c8fbdfa79a3d745ffd6fa67df68e22b42ffe",
+            "message": "Update ListRanking.cpp to concatenate firstname and lastname variables",
+            "author": {
+                "name": "TechnoGeek013",
+                "email": "michaahe20191@gmail.com"
+            },
+            "timestamp": "2024-11-10T09:20:02+00:00",
+            "previous_commit": "06d59e5cbd5bb10261d4eb1f1ffc4365f87b3ac9",
+            "files_changed": [
+                {
+                    "filename": "ListRanking.cpp",
+                    "status": "modified",
+                    "additions": 10,
+                    "deletions": 2,
+                    "changes": 12,
+                    "patch": "@@ -20,13 +20,21 @@ int main() {\n     //Taking input as a pair of Student name and marks\n     for(int i = 0 ; i < Sc; i++)\n     {\n-        cout<<\"Enter  name of student\\n:\";\n+        cout<<\"Enter  Firstname of student\\n:\";\n         string name;\n         cin>>name;\n+        cout<<\"Enter  Lastname of student\\n:\";\n+        string lname;\n+        cin>>lname;\n+        \n+\n+//Concatenation of name and lastname \n+        string full_name = name+\" \" + lname;\n+\n         cout<<\"Enter  Marks of student\\n:\";\n         int mark;\n         cin>>mark;\n-        std.push_back(make_pair(name,mark));\n+        std.push_back(make_pair(full_name,mark));\n     }\n \n cout<<\"Printing initial List\\n\";"
+                }
+            ]
+        },
+        {
+            "commit_hash": "06d59e5cbd5bb10261d4eb1f1ffc4365f87b3ac9",
+            "message": "Update Readme.txt",
+            "author": {
+                "name": "MichTechAahe02",
+                "email": "michaahe20192@gmail.com"
+            },
+            "timestamp": "2024-11-10T09:03:31+00:00",
+            "previous_commit": "93bfb8e572aad44263a6d8b91e6fe8d9222bb821",
+            "files_changed": [
+                {
+                    "filename": "Readme.txt",
+                    "status": "modified",
+                    "additions": 10,
+                    "deletions": 1,
+                    "changes": 11,
+                    "patch": "@@ -1 +1,10 @@\n-This project is to Rank the student\n+This project is to Rank the student.\n+First approach was to use the array for simple sorting.\n+\n+Second thinking was Pair approach which binds the Marks and Student-name together.\n+This code reads a list of students' names and their corresponding marks, storing each as a pair<string, int> in a vector called students. \n+It then sorts this vector in descending order by marks using std::sort with a lambda function as a custom comparator. \n+The comparator compares the second element of each pair (the marks), arranging pairs so that students with higher marks appear first. \n+Finally, it prints the sorted list, showing each student's name alongside their marks. This approach leverages std::sort for an efficient \ud835\udc42(\ud835\udc5blog\ud835\udc5b).\n+O(nlogn) sorting based on marks.\n+"
+                }
+            ]
+        },
+        {
+            "commit_hash": "93bfb8e572aad44263a6d8b91e6fe8d9222bb821",
+            "message": "Merge pull request #2 from MichTechAahe02/Pair_approach\n\nIssue fixed Slow Rendering and Sorting",
+            "author": {
+                "name": "MichTechAahe02",
+                "email": "michaahe20192@gmail.com"
+            },
+            "timestamp": "2024-11-10T08:54:15+00:00",
+            "previous_commit": "44ea4b589ba8be3bf0d285869fbcf7239272f8a1",
+            "files_changed": [
+                {
+                    "filename": ".vscode/c_cpp_properties.json",
+                    "status": "added",
+                    "additions": 18,
+                    "deletions": 0,
+                    "changes": 18,
+                    "patch": "@@ -0,0 +1,18 @@\n+{\n+  \"configurations\": [\n+    {\n+      \"name\": \"windows-gcc-x64\",\n+      \"includePath\": [\n+        \"${workspaceFolder}/**\"\n+      ],\n+      \"compilerPath\": \"C:/Program Files/Mingw/mingw64/bin/gcc.exe\",\n+      \"cStandard\": \"${default}\",\n+      \"cppStandard\": \"${default}\",\n+      \"intelliSenseMode\": \"windows-gcc-x64\",\n+      \"compilerArgs\": [\n+        \"\"\n+      ]\n+    }\n+  ],\n+  \"version\": 4\n+}\n\\ No newline at end of file"
+                },
+                {
+                    "filename": ".vscode/launch.json",
+                    "status": "added",
+                    "additions": 24,
+                    "deletions": 0,
+                    "changes": 24,
+                    "patch": "@@ -0,0 +1,24 @@\n+{\n+  \"version\": \"0.2.0\",\n+  \"configurations\": [\n+    {\n+      \"name\": \"C/C++ Runner: Debug Session\",\n+      \"type\": \"cppdbg\",\n+      \"request\": \"launch\",\n+      \"args\": [],\n+      \"stopAtEntry\": false,\n+      \"externalConsole\": true,\n+      \"cwd\": \"f:/Temp_da/Student-Ranking-System\",\n+      \"program\": \"f:/Temp_da/Student-Ranking-System/build/Debug/outDebug\",\n+      \"MIMode\": \"gdb\",\n+      \"miDebuggerPath\": \"gdb\",\n+      \"setupCommands\": [\n+        {\n+          \"description\": \"Enable pretty-printing for gdb\",\n+          \"text\": \"-enable-pretty-printing\",\n+          \"ignoreFailures\": true\n+        }\n+      ]\n+    }\n+  ]\n+}\n\\ No newline at end of file"
+                },
+                {
+                    "filename": ".vscode/settings.json",
+                    "status": "added",
+                    "additions": 62,
+                    "deletions": 0,
+                    "changes": 62,
+                    "patch": "@@ -0,0 +1,62 @@\n+{\n+  \"C_Cpp_Runner.cCompilerPath\": \"gcc\",\n+  \"C_Cpp_Runner.cppCompilerPath\": \"g++\",\n+  \"C_Cpp_Runner.debuggerPath\": \"gdb\",\n+  \"C_Cpp_Runner.cStandard\": \"\",\n+  \"C_Cpp_Runner.cppStandard\": \"\",\n+  \"C_Cpp_Runner.msvcBatchPath\": \"C:/Program Files/Microsoft Visual Studio/VR_NR/Community/VC/Auxiliary/Build/vcvarsall.bat\",\n+  \"C_Cpp_Runner.useMsvc\": false,\n+  \"C_Cpp_Runner.warnings\": [\n+    \"-Wall\",\n+    \"-Wextra\",\n+    \"-Wpedantic\",\n+    \"-Wshadow\",\n+    \"-Wformat=2\",\n+    \"-Wcast-align\",\n+    \"-Wconversion\",\n+    \"-Wsign-conversion\",\n+    \"-Wnull-dereference\"\n+  ],\n+  \"C_Cpp_Runner.msvcWarnings\": [\n+    \"/W4\",\n+    \"/permissive-\",\n+    \"/w14242\",\n+    \"/w14287\",\n+    \"/w14296\",\n+    \"/w14311\",\n+    \"/w14826\",\n+    \"/w44062\",\n+    \"/w44242\",\n+    \"/w14905\",\n+    \"/w14906\",\n+    \"/w14263\",\n+    \"/w44265\",\n+    \"/w14928\"\n+  ],\n+  \"C_Cpp_Runner.enableWarnings\": true,\n+  \"C_Cpp_Runner.warningsAsError\": false,\n+  \"C_Cpp_Runner.compilerArgs\": [],\n+  \"C_Cpp_Runner.linkerArgs\": [],\n+  \"C_Cpp_Runner.includePaths\": [],\n+  \"C_Cpp_Runner.includeSearch\": [\n+    \"*\",\n+    \"**/*\"\n+  ],\n+  \"C_Cpp_Runner.excludeSearch\": [\n+    \"**/build\",\n+    \"**/build/**\",\n+    \"**/.*\",\n+    \"**/.*/**\",\n+    \"**/.vscode\",\n+    \"**/.vscode/**\"\n+  ],\n+  \"C_Cpp_Runner.useAddressSanitizer\": false,\n+  \"C_Cpp_Runner.useUndefinedSanitizer\": false,\n+  \"C_Cpp_Runner.useLeakSanitizer\": false,\n+  \"C_Cpp_Runner.showCompilationTime\": false,\n+  \"C_Cpp_Runner.useLinkTimeOptimization\": false,\n+  \"C_Cpp_Runner.msvcSecureNoWarnings\": false,\n+  \"files.associations\": {\n+    \"iostream\": \"cpp\"\n+  }\n+}\n\\ No newline at end of file"
+                },
+                {
+                    "filename": "ListRanking.cpp",
+                    "status": "modified",
+                    "additions": 20,
+                    "deletions": 28,
+                    "changes": 48,
+                    "patch": "@@ -1,54 +1,46 @@\n #include <bits/stdc++.h>\n using namespace std;\n \n+void sortPair(vector<pair<string,int>>&t)\n+{\n+\n+    sort(t.begin(), t.end(), [](const pair<string, int> &a, const pair<string, int> &b) {\n+        return a.second > b.second; // Compare by marks in descending order\n+    });\n+\n+}\n+\n int main() {\n \n     int Sc;\n     cout<<\"Enter student count :\";\n-    cin>>Sc;\n-   \n-    string std[Sc];\n+    cin>>Sc;  \n+    vector<pair<string,int>> std;\n+\n+    //Taking input as a pair of Student name and marks\n     for(int i = 0 ; i < Sc; i++)\n     {\n         cout<<\"Enter  name of student\\n:\";\n         string name;\n         cin>>name;\n-        std[i]=name;\n-    }\n-\n-   \n-    int stdm[Sc];\n-     for(int i = 0 ; i < Sc; i++)\n-    {\n-          cout<<\"Enter  Marks of student\\n:\";\n+        cout<<\"Enter  Marks of student\\n:\";\n         int mark;\n         cin>>mark;\n-        stdm[i]=mark;\n+        std.push_back(make_pair(name,mark));\n     }\n \n cout<<\"Printing initial List\\n\";\n \n-    for(int i = 0 ; i < Sc;i++ )\n+    for(auto i: std )\n     {\n-        cout<<\"Student Name :\" <<std[i]<<\" Marks: \"<<stdm[i]<<endl;\n+        cout<<\"Student Name :\" << i.first <<\" Marks: \"<<i.second <<endl;\n     }\n \n-    for (int i = 0; i < Sc - 1; i++) {\n-        int maxIndex = i;\n-        for (int j = i + 1; j < Sc; j++) {\n-            if (stdm[j] > stdm[maxIndex]) {\n-                maxIndex = j;\n-            }\n-        }\n-        \n-        swap(stdm[i], stdm[maxIndex]);\n-        \n-        swap(std[i], std[maxIndex]);\n-    }\n+    sortPair(std);\n \n     cout << \"Printing sorted list in descending order of marks:\\n\";\n-    for (int i = 0; i < Sc; i++) {\n-        cout << \"Student Name: \" << std[i] << \" Marks: \" << stdm[i] << endl;\n+    for (auto i: std ){\n+        cout << \"Student Name: \" << i.first <<\" Marks: \"<<i.second <<endl;\n     }\n \n     return 0;"
+                }
+            ]
+        },
+        {
+            "commit_hash": "c8707f0b3d9818d98be4aac37a12c09faeb4d0a3",
+            "message": "Slow Rendering issue fixed\n\nThe pair approach is faster than the array approach because of tight binding.",
+            "author": {
+                "name": "KvAney",
+                "email": "87108234+KvAney@users.noreply.github.com"
+            },
+            "timestamp": "2024-11-10T08:50:51+00:00",
+            "previous_commit": "1658a30099dd0d3c1a328a1407507205ca1413ad",
+            "files_changed": [
+                {
+                    "filename": "ListRanking.cpp",
+                    "status": "modified",
+                    "additions": 21,
+                    "deletions": 31,
+                    "changes": 52,
+                    "patch": "@@ -1,56 +1,46 @@\n #include <bits/stdc++.h>\n using namespace std;\n \n+void sortPair(vector<pair<string,int>>&t)\n+{\n+\n+    sort(t.begin(), t.end(), [](const pair<string, int> &a, const pair<string, int> &b) {\n+        return a.second > b.second; // Compare by marks in descending order\n+    });\n+\n+}\n+\n int main() {\n \n     int Sc;\n     cout<<\"Enter student count :\";\n-    cin>>Sc;\n-   \n-    string std[Sc];\n+    cin>>Sc;  \n+    vector<pair<string,int>> std;\n+\n+    //Taking input as a pair of Student name and marks\n     for(int i = 0 ; i < Sc; i++)\n     {\n         cout<<\"Enter  name of student\\n:\";\n         string name;\n         cin>>name;\n-        std[i]=name;\n-    }\n-\n-   \n-    int stdm[Sc];\n-     for(int i = 0 ; i < Sc; i++)\n-    {\n-          cout<<\"Enter  Marks of student\\n:\";\n+        cout<<\"Enter  Marks of student\\n:\";\n         int mark;\n         cin>>mark;\n-        stdm[i]=mark;\n+        std.push_back(make_pair(name,mark));\n     }\n- cout <<\" Will  be logging with student data\"<<endl;\n+\n cout<<\"Printing initial List\\n\";\n \n-    for(int i = 0 ; i < Sc;i++ )\n+    for(auto i: std )\n     {\n-        cout<<\"Student Name :\" <<std[i]<<\" Marks : \"<<stdm[i]<<endl;\n+        cout<<\"Student Name :\" << i.first <<\" Marks: \"<<i.second <<endl;\n     }\n \n-    for (int i = 0; i < Sc - 1; i++) {\n-        int maxIndex = i;\n-        for (int j = i + 1; j < Sc; j++) {\n-            if (stdm[j] > stdm[maxIndex]) {\n-                maxIndex = j;\n-            }\n-        }\n-        \n-        cout<<stdm[i] <<\" Will  be swapped with \"<<  stdm[maxIndex] <<endl;\n-        swap(stdm[i], stdm[maxIndex]);\n-        \n-        cout<<\"Correspinding names -> \"<<std[i] <<\" Will be swapped with \"<<  std[maxIndex] <<endl;\n-        swap(std[i], std[maxIndex]);\n-    }\n+    sortPair(std);\n \n     cout << \"Printing sorted list in descending order of marks:\\n\";\n-    for (int i = 0; i < Sc; i++) {\n-        cout << \"Student Name: \" << std[i] << \" Marks: \" << stdm[i] << endl;\n+    for (auto i: std ){\n+        cout << \"Student Name: \" << i.first <<\" Marks: \"<<i.second <<endl;\n     }\n \n     return 0;"
+                }
+            ]
+        },
+        {
+            "commit_hash": "1658a30099dd0d3c1a328a1407507205ca1413ad",
+            "message": "Logging to understand code",
+            "author": {
+                "name": "KvAney",
+                "email": "kaiwalya.aney@gmail.com"
+            },
+            "timestamp": "2024-11-10T08:42:48+00:00",
+            "previous_commit": "1509f29421ed0c97722ffe70fd3a4aa8f76d3b62",
+            "files_changed": [
+                {
+                    "filename": "ListRanking.cpp",
+                    "status": "modified",
+                    "additions": 2,
+                    "deletions": 2,
+                    "changes": 4,
+                    "patch": "@@ -25,7 +25,7 @@ int main() {\n         cin>>mark;\n         stdm[i]=mark;\n     }\n-\n+ cout <<\" Will  be logging with student data\"<<endl;\n cout<<\"Printing initial List\\n\";\n \n     for(int i = 0 ; i < Sc;i++ )\n@@ -41,7 +41,7 @@ cout<<\"Printing initial List\\n\";\n             }\n         }\n         \n-        cout<<stdm[i] <<\" Will be swapped with \"<<  stdm[maxIndex] <<endl;\n+        cout<<stdm[i] <<\" Will  be swapped with \"<<  stdm[maxIndex] <<endl;\n         swap(stdm[i], stdm[maxIndex]);\n         \n         cout<<\"Correspinding names -> \"<<std[i] <<\" Will be swapped with \"<<  std[maxIndex] <<endl;"
+                }
+            ]
+        },
+        {
+            "commit_hash": "1509f29421ed0c97722ffe70fd3a4aa8f76d3b62",
+            "message": "Logging for understanding of code",
+            "author": {
+                "name": "KvAney",
+                "email": "kaiwalya.aney@gmail.com"
+            },
+            "timestamp": "2024-11-10T08:28:51+00:00",
+            "previous_commit": "44ea4b589ba8be3bf0d285869fbcf7239272f8a1",
+            "files_changed": [
+                {
+                    "filename": ".vscode/c_cpp_properties.json",
+                    "status": "added",
+                    "additions": 18,
+                    "deletions": 0,
+                    "changes": 18,
+                    "patch": "@@ -0,0 +1,18 @@\n+{\n+  \"configurations\": [\n+    {\n+      \"name\": \"windows-gcc-x64\",\n+      \"includePath\": [\n+        \"${workspaceFolder}/**\"\n+      ],\n+      \"compilerPath\": \"C:/Program Files/Mingw/mingw64/bin/gcc.exe\",\n+      \"cStandard\": \"${default}\",\n+      \"cppStandard\": \"${default}\",\n+      \"intelliSenseMode\": \"windows-gcc-x64\",\n+      \"compilerArgs\": [\n+        \"\"\n+      ]\n+    }\n+  ],\n+  \"version\": 4\n+}\n\\ No newline at end of file"
+                },
+                {
+                    "filename": ".vscode/launch.json",
+                    "status": "added",
+                    "additions": 24,
+                    "deletions": 0,
+                    "changes": 24,
+                    "patch": "@@ -0,0 +1,24 @@\n+{\n+  \"version\": \"0.2.0\",\n+  \"configurations\": [\n+    {\n+      \"name\": \"C/C++ Runner: Debug Session\",\n+      \"type\": \"cppdbg\",\n+      \"request\": \"launch\",\n+      \"args\": [],\n+      \"stopAtEntry\": false,\n+      \"externalConsole\": true,\n+      \"cwd\": \"f:/Temp_da/Student-Ranking-System\",\n+      \"program\": \"f:/Temp_da/Student-Ranking-System/build/Debug/outDebug\",\n+      \"MIMode\": \"gdb\",\n+      \"miDebuggerPath\": \"gdb\",\n+      \"setupCommands\": [\n+        {\n+          \"description\": \"Enable pretty-printing for gdb\",\n+          \"text\": \"-enable-pretty-printing\",\n+          \"ignoreFailures\": true\n+        }\n+      ]\n+    }\n+  ]\n+}\n\\ No newline at end of file"
+                },
+                {
+                    "filename": ".vscode/settings.json",
+                    "status": "added",
+                    "additions": 62,
+                    "deletions": 0,
+                    "changes": 62,
+                    "patch": "@@ -0,0 +1,62 @@\n+{\n+  \"C_Cpp_Runner.cCompilerPath\": \"gcc\",\n+  \"C_Cpp_Runner.cppCompilerPath\": \"g++\",\n+  \"C_Cpp_Runner.debuggerPath\": \"gdb\",\n+  \"C_Cpp_Runner.cStandard\": \"\",\n+  \"C_Cpp_Runner.cppStandard\": \"\",\n+  \"C_Cpp_Runner.msvcBatchPath\": \"C:/Program Files/Microsoft Visual Studio/VR_NR/Community/VC/Auxiliary/Build/vcvarsall.bat\",\n+  \"C_Cpp_Runner.useMsvc\": false,\n+  \"C_Cpp_Runner.warnings\": [\n+    \"-Wall\",\n+    \"-Wextra\",\n+    \"-Wpedantic\",\n+    \"-Wshadow\",\n+    \"-Wformat=2\",\n+    \"-Wcast-align\",\n+    \"-Wconversion\",\n+    \"-Wsign-conversion\",\n+    \"-Wnull-dereference\"\n+  ],\n+  \"C_Cpp_Runner.msvcWarnings\": [\n+    \"/W4\",\n+    \"/permissive-\",\n+    \"/w14242\",\n+    \"/w14287\",\n+    \"/w14296\",\n+    \"/w14311\",\n+    \"/w14826\",\n+    \"/w44062\",\n+    \"/w44242\",\n+    \"/w14905\",\n+    \"/w14906\",\n+    \"/w14263\",\n+    \"/w44265\",\n+    \"/w14928\"\n+  ],\n+  \"C_Cpp_Runner.enableWarnings\": true,\n+  \"C_Cpp_Runner.warningsAsError\": false,\n+  \"C_Cpp_Runner.compilerArgs\": [],\n+  \"C_Cpp_Runner.linkerArgs\": [],\n+  \"C_Cpp_Runner.includePaths\": [],\n+  \"C_Cpp_Runner.includeSearch\": [\n+    \"*\",\n+    \"**/*\"\n+  ],\n+  \"C_Cpp_Runner.excludeSearch\": [\n+    \"**/build\",\n+    \"**/build/**\",\n+    \"**/.*\",\n+    \"**/.*/**\",\n+    \"**/.vscode\",\n+    \"**/.vscode/**\"\n+  ],\n+  \"C_Cpp_Runner.useAddressSanitizer\": false,\n+  \"C_Cpp_Runner.useUndefinedSanitizer\": false,\n+  \"C_Cpp_Runner.useLeakSanitizer\": false,\n+  \"C_Cpp_Runner.showCompilationTime\": false,\n+  \"C_Cpp_Runner.useLinkTimeOptimization\": false,\n+  \"C_Cpp_Runner.msvcSecureNoWarnings\": false,\n+  \"files.associations\": {\n+    \"iostream\": \"cpp\"\n+  }\n+}\n\\ No newline at end of file"
+                },
+                {
+                    "filename": "ListRanking.cpp",
+                    "status": "modified",
+                    "additions": 3,
+                    "deletions": 1,
+                    "changes": 4,
+                    "patch": "@@ -30,7 +30,7 @@ cout<<\"Printing initial List\\n\";\n \n     for(int i = 0 ; i < Sc;i++ )\n     {\n-        cout<<\"Student Name :\" <<std[i]<<\" Marks: \"<<stdm[i]<<endl;\n+        cout<<\"Student Name :\" <<std[i]<<\" Marks : \"<<stdm[i]<<endl;\n     }\n \n     for (int i = 0; i < Sc - 1; i++) {\n@@ -41,8 +41,10 @@ cout<<\"Printing initial List\\n\";\n             }\n         }\n         \n+        cout<<stdm[i] <<\" Will be swapped with \"<<  stdm[maxIndex] <<endl;\n         swap(stdm[i], stdm[maxIndex]);\n         \n+        cout<<\"Correspinding names -> \"<<std[i] <<\" Will be swapped with \"<<  std[maxIndex] <<endl;\n         swap(std[i], std[maxIndex]);\n     }\n "
+                }
+            ]
+        },
+        {
+            "commit_hash": "44ea4b589ba8be3bf0d285869fbcf7239272f8a1",
+            "message": "Wrote logic of Selection sort to create a descending ranking list on basis of Marks.\n\nUsed Selection Sort algorithm to swap and sort the student details.",
+            "author": {
+                "name": "MichTechAahe02",
+                "email": "michaahe20192@gmail.com"
+            },
+            "timestamp": "2024-11-10T08:04:08+00:00",
+            "previous_commit": "284ac5528f2d605559da3505bcbfe00a5e09422e",
+            "files_changed": [
+                {
+                    "filename": "ListRanking.cpp",
+                    "status": "modified",
+                    "additions": 20,
+                    "deletions": 2,
+                    "changes": 22,
+                    "patch": "@@ -32,6 +32,24 @@ cout<<\"Printing initial List\\n\";\n     {\n         cout<<\"Student Name :\" <<std[i]<<\" Marks: \"<<stdm[i]<<endl;\n     }\n-return 0;\n-}\n \n+    for (int i = 0; i < Sc - 1; i++) {\n+        int maxIndex = i;\n+        for (int j = i + 1; j < Sc; j++) {\n+            if (stdm[j] > stdm[maxIndex]) {\n+                maxIndex = j;\n+            }\n+        }\n+        \n+        swap(stdm[i], stdm[maxIndex]);\n+        \n+        swap(std[i], std[maxIndex]);\n+    }\n+\n+    cout << \"Printing sorted list in descending order of marks:\\n\";\n+    for (int i = 0; i < Sc; i++) {\n+        cout << \"Student Name: \" << std[i] << \" Marks: \" << stdm[i] << endl;\n+    }\n+\n+    return 0;\n+}"
+                }
+            ]
+        },
+        {
+            "commit_hash": "284ac5528f2d605559da3505bcbfe00a5e09422e",
+            "message": "Initialize data structures to take input of name and mark of students\n\nHas for loops for inputting student name data & marks data.",
+            "author": {
+                "name": "MichTechAahe02",
+                "email": "michaahe20192@gmail.com"
+            },
+            "timestamp": "2024-11-10T08:01:16+00:00",
+            "previous_commit": "6488f68847de66d8170c4ba82759a645570ecda5",
+            "files_changed": [
+                {
+                    "filename": "ListRanking.cpp",
+                    "status": "added",
+                    "additions": 37,
+                    "deletions": 0,
+                    "changes": 37,
+                    "patch": "@@ -0,0 +1,37 @@\n+#include <bits/stdc++.h>\n+using namespace std;\n+\n+int main() {\n+\n+    int Sc;\n+    cout<<\"Enter student count :\";\n+    cin>>Sc;\n+   \n+    string std[Sc];\n+    for(int i = 0 ; i < Sc; i++)\n+    {\n+        cout<<\"Enter  name of student\\n:\";\n+        string name;\n+        cin>>name;\n+        std[i]=name;\n+    }\n+\n+   \n+    int stdm[Sc];\n+     for(int i = 0 ; i < Sc; i++)\n+    {\n+          cout<<\"Enter  Marks of student\\n:\";\n+        int mark;\n+        cin>>mark;\n+        stdm[i]=mark;\n+    }\n+\n+cout<<\"Printing initial List\\n\";\n+\n+    for(int i = 0 ; i < Sc;i++ )\n+    {\n+        cout<<\"Student Name :\" <<std[i]<<\" Marks: \"<<stdm[i]<<endl;\n+    }\n+return 0;\n+}\n+"
+                }
+            ]
+        },
+        {
+            "commit_hash": "6488f68847de66d8170c4ba82759a645570ecda5",
+            "message": "initialize Readme.txt with title of project",
+            "author": {
+                "name": "MichTechAahe02",
+                "email": "michaahe20192@gmail.com"
+            },
+            "timestamp": "2024-11-10T07:57:26+00:00",
+            "previous_commit": null,
+            "files_changed": [
+                {
+                    "filename": "Readme.txt",
+                    "status": "added",
+                    "additions": 1,
+                    "deletions": 0,
+                    "changes": 1,
+                    "patch": "@@ -0,0 +1 @@\n+This project is to Rank the student"
+                }
+            ]
+        }
+    ]
+},
+{
+    "branch": "main",
+    "commits": [
+        {
+            "commit_hash": "6f0b10331233d22b003564a8a11309d032db88cb",
+            "message": "Update Readme.txt with latest implementation of structure information",
+            "author": {
+                "name": "MichTechAahe02",
+                "email": "michaahe20192@gmail.com"
+            },
+            "timestamp": "2024-11-10T09:45:01+00:00",
+            "previous_commit": "e003c8874c23e34d957422f1ec492f4e818c23c3",
+            "files_changed": [
+                {
+                    "filename": "Readme.txt",
+                    "status": "modified",
+                    "additions": 4,
+                    "deletions": 0,
+                    "changes": 4,
+                    "patch": "@@ -8,3 +8,7 @@ The comparator compares the second element of each pair (the marks), arranging p\n Finally, it prints the sorted list, showing each student's name alongside their marks. This approach leverages std::sort for an efficient \ud835\udc42(\ud835\udc5blog\ud835\udc5b).\n O(nlogn) sorting based on marks.\n \n+This code defines a Student structure with fullname and marks as members. It reads the count of students and then, for each student, collects their full name and marks. \n+All students are stored in a vector, and the sortStudents function sorts this vector in descending order of marks using a custom comparator. \n+After sorting, the code prints the initial and sorted lists, showing each student's name and marks. \n+The use of cin.ignore() ensures that input is correctly handled for multi-word names."
+                }
+            ]
+        },
+        {
+            "commit_hash": "e003c8874c23e34d957422f1ec492f4e818c23c3",
+            "message": "Update ListRanking.cpp by creating a structure that holds student details with fullname and marks as members\n\nThis code defines a Student structure with fullname and marks as members. It reads the count of students and then, for each student, collects their full name and marks. All students are stored in a vector, and the sortStudents function sorts this vector in descending order of marks using a custom comparator. After sorting, the code prints the initial and sorted lists, showing each student's name and marks. The use of cin.ignore() ensures that input is correctly handled for multi-word names.",
+            "author": {
+                "name": "MichTechAahe02",
+                "email": "michaahe20192@gmail.com"
+            },
+            "timestamp": "2024-11-10T09:44:00+00:00",
+            "previous_commit": "721d88cc944babef18b91a9e2abd746ea1597a25",
+            "files_changed": [
+                {
+                    "filename": "ListRanking.cpp",
+                    "status": "modified",
+                    "additions": 31,
+                    "deletions": 35,
+                    "changes": 66,
+                    "patch": "@@ -1,55 +1,51 @@\n #include <bits/stdc++.h>\n using namespace std;\n \n-void sortPair(vector<pair<string,int>>&t)\n-{\n-\n-    sort(t.begin(), t.end(), [](const pair<string, int> &a, const pair<string, int> &b) {\n-        return a.second > b.second; // Compare by marks in descending order\n+// Define the Student structure\n+struct Student {\n+    string fullname;\n+    int marks;\n+};\n+\n+// Function to sort the vector of students in descending order of marks\n+void sortStudents(vector<Student>& students) {\n+    sort(students.begin(), students.end(), [](const Student &a, const Student &b) {\n+        return a.marks > b.marks; // Sort in descending order of marks\n     });\n-\n }\n \n int main() {\n-\n     int Sc;\n-    cout<<\"Enter student count :\";\n-    cin>>Sc;  \n-     cin.ignore();\n-\n-    vector<pair<string,int>> std;\n-\n-    //Taking input as a pair of Student name and marks\n-    for(int i = 0 ; i < Sc; i++)\n-    {\n-        cout<<\"Enter  Full Name of student\\n:\";\n-        string name;\n-        getline(cin,name);\n-        \n+    cout << \"Enter student count: \";\n+    cin >> Sc;\n+    cin.ignore();  // Clear the newline character left in the buffer after cin >> Sc\n \n-//Concatenation of name and lastname \n-        string full_name = name+\" \" + lname;\n+    vector<Student> students;\n \n-        cout<<\"Enter  Marks of student\\n:\";\n-        int mark;\n-        cin>>mark;\n-        cin.ignore();\n+    for (int i = 0; i < Sc; i++) {\n+        Student student;\n+        \n+        cout << \"Enter fullname of student: \";\n+        getline(cin, student.fullname);  // Reads the full name with spaces\n \n-        std.push_back(make_pair(full_name,mark));\n-    }\n+        cout << \"Enter marks of student: \";\n+        cin >> student.marks;\n+        cin.ignore();  // Clear the newline character for the next getline\n \n-cout<<\"Printing initial List\\n\";\n+        students.push_back(student);  // Add student to the vector\n+    }\n \n-    for(auto i: std )\n-    {\n-        cout<<\"Student Name :\" << i.first <<\" Marks: \"<<i.second <<endl;\n+    cout << \"Printing initial list:\\n\";\n+    for (const auto &student : students) {\n+        cout << \"Student Name: \" << student.fullname << \" Marks: \" << student.marks << endl;\n     }\n \n-    sortPair(std);\n+    // Sort the students by marks in descending order\n+    sortStudents(students);\n \n     cout << \"Printing sorted list in descending order of marks:\\n\";\n-    for (auto i: std ){\n-        cout << \"Student Name: \" << i.first <<\" Marks: \"<<i.second <<endl;\n+    for (const auto &student : students) {\n+        cout << \"Student Name: \" << student.fullname << \" Marks: \" << student.marks << endl;\n     }\n \n     return 0;"
+                }
+            ]
+        },
+        {
+            "commit_hash": "721d88cc944babef18b91a9e2abd746ea1597a25",
+            "message": "Merge pull request #4 from MichTechAahe02/St_detail\n\nIssue Fixed of Not able to input Lastname",
+            "author": {
+                "name": "MichTechAahe02",
+                "email": "michaahe20192@gmail.com"
+            },
+            "timestamp": "2024-11-10T09:38:39+00:00",
+            "previous_commit": "06d59e5cbd5bb10261d4eb1f1ffc4365f87b3ac9",
+            "files_changed": [
+                {
+                    "filename": "ListRanking.cpp",
+                    "status": "modified",
+                    "additions": 12,
+                    "deletions": 3,
+                    "changes": 15,
+                    "patch": "@@ -15,18 +15,27 @@ int main() {\n     int Sc;\n     cout<<\"Enter student count :\";\n     cin>>Sc;  \n+     cin.ignore();\n+\n     vector<pair<string,int>> std;\n \n     //Taking input as a pair of Student name and marks\n     for(int i = 0 ; i < Sc; i++)\n     {\n-        cout<<\"Enter  name of student\\n:\";\n+        cout<<\"Enter  Full Name of student\\n:\";\n         string name;\n-        cin>>name;\n+        getline(cin,name);\n+        \n+\n+//Concatenation of name and lastname \n+        string full_name = name+\" \" + lname;\n+\n         cout<<\"Enter  Marks of student\\n:\";\n         int mark;\n         cin>>mark;\n-        std.push_back(make_pair(name,mark));\n+        cin.ignore();\n+\n+        std.push_back(make_pair(full_name,mark));\n     }\n \n cout<<\"Printing initial List\\n\";"
+                }
+            ]
+        },
+        {
+            "commit_hash": "5ff9bccc6b83c356f450f500a79844fba46b5f75",
+            "message": "Update ListRanking.cpp with updated getline",
+            "author": {
+                "name": "TechnoGeek013",
+                "email": "michaahe20191@gmail.com"
+            },
+            "timestamp": "2024-11-10T09:31:47+00:00",
+            "previous_commit": "79c6c8fbdfa79a3d745ffd6fa67df68e22b42ffe",
+            "files_changed": [
+                {
+                    "filename": "ListRanking.cpp",
+                    "status": "modified",
+                    "additions": 6,
+                    "deletions": 5,
+                    "changes": 11,
+                    "patch": "@@ -15,17 +15,16 @@ int main() {\n     int Sc;\n     cout<<\"Enter student count :\";\n     cin>>Sc;  \n+     cin.ignore();\n+\n     vector<pair<string,int>> std;\n \n     //Taking input as a pair of Student name and marks\n     for(int i = 0 ; i < Sc; i++)\n     {\n-        cout<<\"Enter  Firstname of student\\n:\";\n+        cout<<\"Enter  Full Name of student\\n:\";\n         string name;\n-        cin>>name;\n-        cout<<\"Enter  Lastname of student\\n:\";\n-        string lname;\n-        cin>>lname;\n+        getline(cin,name);\n         \n \n //Concatenation of name and lastname \n@@ -34,6 +33,8 @@ int main() {\n         cout<<\"Enter  Marks of student\\n:\";\n         int mark;\n         cin>>mark;\n+        cin.ignore();\n+\n         std.push_back(make_pair(full_name,mark));\n     }\n "
+                }
+            ]
+        },
+        {
+            "commit_hash": "79c6c8fbdfa79a3d745ffd6fa67df68e22b42ffe",
+            "message": "Update ListRanking.cpp to concatenate firstname and lastname variables",
+            "author": {
+                "name": "TechnoGeek013",
+                "email": "michaahe20191@gmail.com"
+            },
+            "timestamp": "2024-11-10T09:20:02+00:00",
+            "previous_commit": "06d59e5cbd5bb10261d4eb1f1ffc4365f87b3ac9",
+            "files_changed": [
+                {
+                    "filename": "ListRanking.cpp",
+                    "status": "modified",
+                    "additions": 10,
+                    "deletions": 2,
+                    "changes": 12,
+                    "patch": "@@ -20,13 +20,21 @@ int main() {\n     //Taking input as a pair of Student name and marks\n     for(int i = 0 ; i < Sc; i++)\n     {\n-        cout<<\"Enter  name of student\\n:\";\n+        cout<<\"Enter  Firstname of student\\n:\";\n         string name;\n         cin>>name;\n+        cout<<\"Enter  Lastname of student\\n:\";\n+        string lname;\n+        cin>>lname;\n+        \n+\n+//Concatenation of name and lastname \n+        string full_name = name+\" \" + lname;\n+\n         cout<<\"Enter  Marks of student\\n:\";\n         int mark;\n         cin>>mark;\n-        std.push_back(make_pair(name,mark));\n+        std.push_back(make_pair(full_name,mark));\n     }\n \n cout<<\"Printing initial List\\n\";"
+                }
+            ]
+        },
+        {
+            "commit_hash": "06d59e5cbd5bb10261d4eb1f1ffc4365f87b3ac9",
+            "message": "Update Readme.txt",
+            "author": {
+                "name": "MichTechAahe02",
+                "email": "michaahe20192@gmail.com"
+            },
+            "timestamp": "2024-11-10T09:03:31+00:00",
+            "previous_commit": "93bfb8e572aad44263a6d8b91e6fe8d9222bb821",
+            "files_changed": [
+                {
+                    "filename": "Readme.txt",
+                    "status": "modified",
+                    "additions": 10,
+                    "deletions": 1,
+                    "changes": 11,
+                    "patch": "@@ -1 +1,10 @@\n-This project is to Rank the student\n+This project is to Rank the student.\n+First approach was to use the array for simple sorting.\n+\n+Second thinking was Pair approach which binds the Marks and Student-name together.\n+This code reads a list of students' names and their corresponding marks, storing each as a pair<string, int> in a vector called students. \n+It then sorts this vector in descending order by marks using std::sort with a lambda function as a custom comparator. \n+The comparator compares the second element of each pair (the marks), arranging pairs so that students with higher marks appear first. \n+Finally, it prints the sorted list, showing each student's name alongside their marks. This approach leverages std::sort for an efficient \ud835\udc42(\ud835\udc5blog\ud835\udc5b).\n+O(nlogn) sorting based on marks.\n+"
+                }
+            ]
+        },
+        {
+            "commit_hash": "93bfb8e572aad44263a6d8b91e6fe8d9222bb821",
+            "message": "Merge pull request #2 from MichTechAahe02/Pair_approach\n\nIssue fixed Slow Rendering and Sorting",
+            "author": {
+                "name": "MichTechAahe02",
+                "email": "michaahe20192@gmail.com"
+            },
+            "timestamp": "2024-11-10T08:54:15+00:00",
+            "previous_commit": "44ea4b589ba8be3bf0d285869fbcf7239272f8a1",
+            "files_changed": [
+                {
+                    "filename": ".vscode/c_cpp_properties.json",
+                    "status": "added",
+                    "additions": 18,
+                    "deletions": 0,
+                    "changes": 18,
+                    "patch": "@@ -0,0 +1,18 @@\n+{\n+  \"configurations\": [\n+    {\n+      \"name\": \"windows-gcc-x64\",\n+      \"includePath\": [\n+        \"${workspaceFolder}/**\"\n+      ],\n+      \"compilerPath\": \"C:/Program Files/Mingw/mingw64/bin/gcc.exe\",\n+      \"cStandard\": \"${default}\",\n+      \"cppStandard\": \"${default}\",\n+      \"intelliSenseMode\": \"windows-gcc-x64\",\n+      \"compilerArgs\": [\n+        \"\"\n+      ]\n+    }\n+  ],\n+  \"version\": 4\n+}\n\\ No newline at end of file"
+                },
+                {
+                    "filename": ".vscode/launch.json",
+                    "status": "added",
+                    "additions": 24,
+                    "deletions": 0,
+                    "changes": 24,
+                    "patch": "@@ -0,0 +1,24 @@\n+{\n+  \"version\": \"0.2.0\",\n+  \"configurations\": [\n+    {\n+      \"name\": \"C/C++ Runner: Debug Session\",\n+      \"type\": \"cppdbg\",\n+      \"request\": \"launch\",\n+      \"args\": [],\n+      \"stopAtEntry\": false,\n+      \"externalConsole\": true,\n+      \"cwd\": \"f:/Temp_da/Student-Ranking-System\",\n+      \"program\": \"f:/Temp_da/Student-Ranking-System/build/Debug/outDebug\",\n+      \"MIMode\": \"gdb\",\n+      \"miDebuggerPath\": \"gdb\",\n+      \"setupCommands\": [\n+        {\n+          \"description\": \"Enable pretty-printing for gdb\",\n+          \"text\": \"-enable-pretty-printing\",\n+          \"ignoreFailures\": true\n+        }\n+      ]\n+    }\n+  ]\n+}\n\\ No newline at end of file"
+                },
+                {
+                    "filename": ".vscode/settings.json",
+                    "status": "added",
+                    "additions": 62,
+                    "deletions": 0,
+                    "changes": 62,
+                    "patch": "@@ -0,0 +1,62 @@\n+{\n+  \"C_Cpp_Runner.cCompilerPath\": \"gcc\",\n+  \"C_Cpp_Runner.cppCompilerPath\": \"g++\",\n+  \"C_Cpp_Runner.debuggerPath\": \"gdb\",\n+  \"C_Cpp_Runner.cStandard\": \"\",\n+  \"C_Cpp_Runner.cppStandard\": \"\",\n+  \"C_Cpp_Runner.msvcBatchPath\": \"C:/Program Files/Microsoft Visual Studio/VR_NR/Community/VC/Auxiliary/Build/vcvarsall.bat\",\n+  \"C_Cpp_Runner.useMsvc\": false,\n+  \"C_Cpp_Runner.warnings\": [\n+    \"-Wall\",\n+    \"-Wextra\",\n+    \"-Wpedantic\",\n+    \"-Wshadow\",\n+    \"-Wformat=2\",\n+    \"-Wcast-align\",\n+    \"-Wconversion\",\n+    \"-Wsign-conversion\",\n+    \"-Wnull-dereference\"\n+  ],\n+  \"C_Cpp_Runner.msvcWarnings\": [\n+    \"/W4\",\n+    \"/permissive-\",\n+    \"/w14242\",\n+    \"/w14287\",\n+    \"/w14296\",\n+    \"/w14311\",\n+    \"/w14826\",\n+    \"/w44062\",\n+    \"/w44242\",\n+    \"/w14905\",\n+    \"/w14906\",\n+    \"/w14263\",\n+    \"/w44265\",\n+    \"/w14928\"\n+  ],\n+  \"C_Cpp_Runner.enableWarnings\": true,\n+  \"C_Cpp_Runner.warningsAsError\": false,\n+  \"C_Cpp_Runner.compilerArgs\": [],\n+  \"C_Cpp_Runner.linkerArgs\": [],\n+  \"C_Cpp_Runner.includePaths\": [],\n+  \"C_Cpp_Runner.includeSearch\": [\n+    \"*\",\n+    \"**/*\"\n+  ],\n+  \"C_Cpp_Runner.excludeSearch\": [\n+    \"**/build\",\n+    \"**/build/**\",\n+    \"**/.*\",\n+    \"**/.*/**\",\n+    \"**/.vscode\",\n+    \"**/.vscode/**\"\n+  ],\n+  \"C_Cpp_Runner.useAddressSanitizer\": false,\n+  \"C_Cpp_Runner.useUndefinedSanitizer\": false,\n+  \"C_Cpp_Runner.useLeakSanitizer\": false,\n+  \"C_Cpp_Runner.showCompilationTime\": false,\n+  \"C_Cpp_Runner.useLinkTimeOptimization\": false,\n+  \"C_Cpp_Runner.msvcSecureNoWarnings\": false,\n+  \"files.associations\": {\n+    \"iostream\": \"cpp\"\n+  }\n+}\n\\ No newline at end of file"
+                },
+                {
+                    "filename": "ListRanking.cpp",
+                    "status": "modified",
+                    "additions": 20,
+                    "deletions": 28,
+                    "changes": 48,
+                    "patch": "@@ -1,54 +1,46 @@\n #include <bits/stdc++.h>\n using namespace std;\n \n+void sortPair(vector<pair<string,int>>&t)\n+{\n+\n+    sort(t.begin(), t.end(), [](const pair<string, int> &a, const pair<string, int> &b) {\n+        return a.second > b.second; // Compare by marks in descending order\n+    });\n+\n+}\n+\n int main() {\n \n     int Sc;\n     cout<<\"Enter student count :\";\n-    cin>>Sc;\n-   \n-    string std[Sc];\n+    cin>>Sc;  \n+    vector<pair<string,int>> std;\n+\n+    //Taking input as a pair of Student name and marks\n     for(int i = 0 ; i < Sc; i++)\n     {\n         cout<<\"Enter  name of student\\n:\";\n         string name;\n         cin>>name;\n-        std[i]=name;\n-    }\n-\n-   \n-    int stdm[Sc];\n-     for(int i = 0 ; i < Sc; i++)\n-    {\n-          cout<<\"Enter  Marks of student\\n:\";\n+        cout<<\"Enter  Marks of student\\n:\";\n         int mark;\n         cin>>mark;\n-        stdm[i]=mark;\n+        std.push_back(make_pair(name,mark));\n     }\n \n cout<<\"Printing initial List\\n\";\n \n-    for(int i = 0 ; i < Sc;i++ )\n+    for(auto i: std )\n     {\n-        cout<<\"Student Name :\" <<std[i]<<\" Marks: \"<<stdm[i]<<endl;\n+        cout<<\"Student Name :\" << i.first <<\" Marks: \"<<i.second <<endl;\n     }\n \n-    for (int i = 0; i < Sc - 1; i++) {\n-        int maxIndex = i;\n-        for (int j = i + 1; j < Sc; j++) {\n-            if (stdm[j] > stdm[maxIndex]) {\n-                maxIndex = j;\n-            }\n-        }\n-        \n-        swap(stdm[i], stdm[maxIndex]);\n-        \n-        swap(std[i], std[maxIndex]);\n-    }\n+    sortPair(std);\n \n     cout << \"Printing sorted list in descending order of marks:\\n\";\n-    for (int i = 0; i < Sc; i++) {\n-        cout << \"Student Name: \" << std[i] << \" Marks: \" << stdm[i] << endl;\n+    for (auto i: std ){\n+        cout << \"Student Name: \" << i.first <<\" Marks: \"<<i.second <<endl;\n     }\n \n     return 0;"
+                }
+            ]
+        },
+        {
+            "commit_hash": "c8707f0b3d9818d98be4aac37a12c09faeb4d0a3",
+            "message": "Slow Rendering issue fixed\n\nThe pair approach is faster than the array approach because of tight binding.",
+            "author": {
+                "name": "KvAney",
+                "email": "87108234+KvAney@users.noreply.github.com"
+            },
+            "timestamp": "2024-11-10T08:50:51+00:00",
+            "previous_commit": "1658a30099dd0d3c1a328a1407507205ca1413ad",
+            "files_changed": [
+                {
+                    "filename": "ListRanking.cpp",
+                    "status": "modified",
+                    "additions": 21,
+                    "deletions": 31,
+                    "changes": 52,
+                    "patch": "@@ -1,56 +1,46 @@\n #include <bits/stdc++.h>\n using namespace std;\n \n+void sortPair(vector<pair<string,int>>&t)\n+{\n+\n+    sort(t.begin(), t.end(), [](const pair<string, int> &a, const pair<string, int> &b) {\n+        return a.second > b.second; // Compare by marks in descending order\n+    });\n+\n+}\n+\n int main() {\n \n     int Sc;\n     cout<<\"Enter student count :\";\n-    cin>>Sc;\n-   \n-    string std[Sc];\n+    cin>>Sc;  \n+    vector<pair<string,int>> std;\n+\n+    //Taking input as a pair of Student name and marks\n     for(int i = 0 ; i < Sc; i++)\n     {\n         cout<<\"Enter  name of student\\n:\";\n         string name;\n         cin>>name;\n-        std[i]=name;\n-    }\n-\n-   \n-    int stdm[Sc];\n-     for(int i = 0 ; i < Sc; i++)\n-    {\n-          cout<<\"Enter  Marks of student\\n:\";\n+        cout<<\"Enter  Marks of student\\n:\";\n         int mark;\n         cin>>mark;\n-        stdm[i]=mark;\n+        std.push_back(make_pair(name,mark));\n     }\n- cout <<\" Will  be logging with student data\"<<endl;\n+\n cout<<\"Printing initial List\\n\";\n \n-    for(int i = 0 ; i < Sc;i++ )\n+    for(auto i: std )\n     {\n-        cout<<\"Student Name :\" <<std[i]<<\" Marks : \"<<stdm[i]<<endl;\n+        cout<<\"Student Name :\" << i.first <<\" Marks: \"<<i.second <<endl;\n     }\n \n-    for (int i = 0; i < Sc - 1; i++) {\n-        int maxIndex = i;\n-        for (int j = i + 1; j < Sc; j++) {\n-            if (stdm[j] > stdm[maxIndex]) {\n-                maxIndex = j;\n-            }\n-        }\n-        \n-        cout<<stdm[i] <<\" Will  be swapped with \"<<  stdm[maxIndex] <<endl;\n-        swap(stdm[i], stdm[maxIndex]);\n-        \n-        cout<<\"Correspinding names -> \"<<std[i] <<\" Will be swapped with \"<<  std[maxIndex] <<endl;\n-        swap(std[i], std[maxIndex]);\n-    }\n+    sortPair(std);\n \n     cout << \"Printing sorted list in descending order of marks:\\n\";\n-    for (int i = 0; i < Sc; i++) {\n-        cout << \"Student Name: \" << std[i] << \" Marks: \" << stdm[i] << endl;\n+    for (auto i: std ){\n+        cout << \"Student Name: \" << i.first <<\" Marks: \"<<i.second <<endl;\n     }\n \n     return 0;"
+                }
+            ]
+        },
+        {
+            "commit_hash": "1658a30099dd0d3c1a328a1407507205ca1413ad",
+            "message": "Logging to understand code",
+            "author": {
+                "name": "KvAney",
+                "email": "kaiwalya.aney@gmail.com"
+            },
+            "timestamp": "2024-11-10T08:42:48+00:00",
+            "previous_commit": "1509f29421ed0c97722ffe70fd3a4aa8f76d3b62",
+            "files_changed": [
+                {
+                    "filename": "ListRanking.cpp",
+                    "status": "modified",
+                    "additions": 2,
+                    "deletions": 2,
+                    "changes": 4,
+                    "patch": "@@ -25,7 +25,7 @@ int main() {\n         cin>>mark;\n         stdm[i]=mark;\n     }\n-\n+ cout <<\" Will  be logging with student data\"<<endl;\n cout<<\"Printing initial List\\n\";\n \n     for(int i = 0 ; i < Sc;i++ )\n@@ -41,7 +41,7 @@ cout<<\"Printing initial List\\n\";\n             }\n         }\n         \n-        cout<<stdm[i] <<\" Will be swapped with \"<<  stdm[maxIndex] <<endl;\n+        cout<<stdm[i] <<\" Will  be swapped with \"<<  stdm[maxIndex] <<endl;\n         swap(stdm[i], stdm[maxIndex]);\n         \n         cout<<\"Correspinding names -> \"<<std[i] <<\" Will be swapped with \"<<  std[maxIndex] <<endl;"
+                }
+            ]
+        },
+        {
+            "commit_hash": "1509f29421ed0c97722ffe70fd3a4aa8f76d3b62",
+            "message": "Logging for understanding of code",
+            "author": {
+                "name": "KvAney",
+                "email": "kaiwalya.aney@gmail.com"
+            },
+            "timestamp": "2024-11-10T08:28:51+00:00",
+            "previous_commit": "44ea4b589ba8be3bf0d285869fbcf7239272f8a1",
+            "files_changed": [
+                {
+                    "filename": ".vscode/c_cpp_properties.json",
+                    "status": "added",
+                    "additions": 18,
+                    "deletions": 0,
+                    "changes": 18,
+                    "patch": "@@ -0,0 +1,18 @@\n+{\n+  \"configurations\": [\n+    {\n+      \"name\": \"windows-gcc-x64\",\n+      \"includePath\": [\n+        \"${workspaceFolder}/**\"\n+      ],\n+      \"compilerPath\": \"C:/Program Files/Mingw/mingw64/bin/gcc.exe\",\n+      \"cStandard\": \"${default}\",\n+      \"cppStandard\": \"${default}\",\n+      \"intelliSenseMode\": \"windows-gcc-x64\",\n+      \"compilerArgs\": [\n+        \"\"\n+      ]\n+    }\n+  ],\n+  \"version\": 4\n+}\n\\ No newline at end of file"
+                },
+                {
+                    "filename": ".vscode/launch.json",
+                    "status": "added",
+                    "additions": 24,
+                    "deletions": 0,
+                    "changes": 24,
+                    "patch": "@@ -0,0 +1,24 @@\n+{\n+  \"version\": \"0.2.0\",\n+  \"configurations\": [\n+    {\n+      \"name\": \"C/C++ Runner: Debug Session\",\n+      \"type\": \"cppdbg\",\n+      \"request\": \"launch\",\n+      \"args\": [],\n+      \"stopAtEntry\": false,\n+      \"externalConsole\": true,\n+      \"cwd\": \"f:/Temp_da/Student-Ranking-System\",\n+      \"program\": \"f:/Temp_da/Student-Ranking-System/build/Debug/outDebug\",\n+      \"MIMode\": \"gdb\",\n+      \"miDebuggerPath\": \"gdb\",\n+      \"setupCommands\": [\n+        {\n+          \"description\": \"Enable pretty-printing for gdb\",\n+          \"text\": \"-enable-pretty-printing\",\n+          \"ignoreFailures\": true\n+        }\n+      ]\n+    }\n+  ]\n+}\n\\ No newline at end of file"
+                },
+                {
+                    "filename": ".vscode/settings.json",
+                    "status": "added",
+                    "additions": 62,
+                    "deletions": 0,
+                    "changes": 62,
+                    "patch": "@@ -0,0 +1,62 @@\n+{\n+  \"C_Cpp_Runner.cCompilerPath\": \"gcc\",\n+  \"C_Cpp_Runner.cppCompilerPath\": \"g++\",\n+  \"C_Cpp_Runner.debuggerPath\": \"gdb\",\n+  \"C_Cpp_Runner.cStandard\": \"\",\n+  \"C_Cpp_Runner.cppStandard\": \"\",\n+  \"C_Cpp_Runner.msvcBatchPath\": \"C:/Program Files/Microsoft Visual Studio/VR_NR/Community/VC/Auxiliary/Build/vcvarsall.bat\",\n+  \"C_Cpp_Runner.useMsvc\": false,\n+  \"C_Cpp_Runner.warnings\": [\n+    \"-Wall\",\n+    \"-Wextra\",\n+    \"-Wpedantic\",\n+    \"-Wshadow\",\n+    \"-Wformat=2\",\n+    \"-Wcast-align\",\n+    \"-Wconversion\",\n+    \"-Wsign-conversion\",\n+    \"-Wnull-dereference\"\n+  ],\n+  \"C_Cpp_Runner.msvcWarnings\": [\n+    \"/W4\",\n+    \"/permissive-\",\n+    \"/w14242\",\n+    \"/w14287\",\n+    \"/w14296\",\n+    \"/w14311\",\n+    \"/w14826\",\n+    \"/w44062\",\n+    \"/w44242\",\n+    \"/w14905\",\n+    \"/w14906\",\n+    \"/w14263\",\n+    \"/w44265\",\n+    \"/w14928\"\n+  ],\n+  \"C_Cpp_Runner.enableWarnings\": true,\n+  \"C_Cpp_Runner.warningsAsError\": false,\n+  \"C_Cpp_Runner.compilerArgs\": [],\n+  \"C_Cpp_Runner.linkerArgs\": [],\n+  \"C_Cpp_Runner.includePaths\": [],\n+  \"C_Cpp_Runner.includeSearch\": [\n+    \"*\",\n+    \"**/*\"\n+  ],\n+  \"C_Cpp_Runner.excludeSearch\": [\n+    \"**/build\",\n+    \"**/build/**\",\n+    \"**/.*\",\n+    \"**/.*/**\",\n+    \"**/.vscode\",\n+    \"**/.vscode/**\"\n+  ],\n+  \"C_Cpp_Runner.useAddressSanitizer\": false,\n+  \"C_Cpp_Runner.useUndefinedSanitizer\": false,\n+  \"C_Cpp_Runner.useLeakSanitizer\": false,\n+  \"C_Cpp_Runner.showCompilationTime\": false,\n+  \"C_Cpp_Runner.useLinkTimeOptimization\": false,\n+  \"C_Cpp_Runner.msvcSecureNoWarnings\": false,\n+  \"files.associations\": {\n+    \"iostream\": \"cpp\"\n+  }\n+}\n\\ No newline at end of file"
+                },
+                {
+                    "filename": "ListRanking.cpp",
+                    "status": "modified",
+                    "additions": 3,
+                    "deletions": 1,
+                    "changes": 4,
+                    "patch": "@@ -30,7 +30,7 @@ cout<<\"Printing initial List\\n\";\n \n     for(int i = 0 ; i < Sc;i++ )\n     {\n-        cout<<\"Student Name :\" <<std[i]<<\" Marks: \"<<stdm[i]<<endl;\n+        cout<<\"Student Name :\" <<std[i]<<\" Marks : \"<<stdm[i]<<endl;\n     }\n \n     for (int i = 0; i < Sc - 1; i++) {\n@@ -41,8 +41,10 @@ cout<<\"Printing initial List\\n\";\n             }\n         }\n         \n+        cout<<stdm[i] <<\" Will be swapped with \"<<  stdm[maxIndex] <<endl;\n         swap(stdm[i], stdm[maxIndex]);\n         \n+        cout<<\"Correspinding names -> \"<<std[i] <<\" Will be swapped with \"<<  std[maxIndex] <<endl;\n         swap(std[i], std[maxIndex]);\n     }\n "
+                }
+            ]
+        },
+        {
+            "commit_hash": "44ea4b589ba8be3bf0d285869fbcf7239272f8a1",
+            "message": "Wrote logic of Selection sort to create a descending ranking list on basis of Marks.\n\nUsed Selection Sort algorithm to swap and sort the student details.",
+            "author": {
+                "name": "MichTechAahe02",
+                "email": "michaahe20192@gmail.com"
+            },
+            "timestamp": "2024-11-10T08:04:08+00:00",
+            "previous_commit": "284ac5528f2d605559da3505bcbfe00a5e09422e",
+            "files_changed": [
+                {
+                    "filename": "ListRanking.cpp",
+                    "status": "modified",
+                    "additions": 20,
+                    "deletions": 2,
+                    "changes": 22,
+                    "patch": "@@ -32,6 +32,24 @@ cout<<\"Printing initial List\\n\";\n     {\n         cout<<\"Student Name :\" <<std[i]<<\" Marks: \"<<stdm[i]<<endl;\n     }\n-return 0;\n-}\n \n+    for (int i = 0; i < Sc - 1; i++) {\n+        int maxIndex = i;\n+        for (int j = i + 1; j < Sc; j++) {\n+            if (stdm[j] > stdm[maxIndex]) {\n+                maxIndex = j;\n+            }\n+        }\n+        \n+        swap(stdm[i], stdm[maxIndex]);\n+        \n+        swap(std[i], std[maxIndex]);\n+    }\n+\n+    cout << \"Printing sorted list in descending order of marks:\\n\";\n+    for (int i = 0; i < Sc; i++) {\n+        cout << \"Student Name: \" << std[i] << \" Marks: \" << stdm[i] << endl;\n+    }\n+\n+    return 0;\n+}"
+                }
+            ]
+        },
+        {
+            "commit_hash": "284ac5528f2d605559da3505bcbfe00a5e09422e",
+            "message": "Initialize data structures to take input of name and mark of students\n\nHas for loops for inputting student name data & marks data.",
+            "author": {
+                "name": "MichTechAahe02",
+                "email": "michaahe20192@gmail.com"
+            },
+            "timestamp": "2024-11-10T08:01:16+00:00",
+            "previous_commit": "6488f68847de66d8170c4ba82759a645570ecda5",
+            "files_changed": [
+                {
+                    "filename": "ListRanking.cpp",
+                    "status": "added",
+                    "additions": 37,
+                    "deletions": 0,
+                    "changes": 37,
+                    "patch": "@@ -0,0 +1,37 @@\n+#include <bits/stdc++.h>\n+using namespace std;\n+\n+int main() {\n+\n+    int Sc;\n+    cout<<\"Enter student count :\";\n+    cin>>Sc;\n+   \n+    string std[Sc];\n+    for(int i = 0 ; i < Sc; i++)\n+    {\n+        cout<<\"Enter  name of student\\n:\";\n+        string name;\n+        cin>>name;\n+        std[i]=name;\n+    }\n+\n+   \n+    int stdm[Sc];\n+     for(int i = 0 ; i < Sc; i++)\n+    {\n+          cout<<\"Enter  Marks of student\\n:\";\n+        int mark;\n+        cin>>mark;\n+        stdm[i]=mark;\n+    }\n+\n+cout<<\"Printing initial List\\n\";\n+\n+    for(int i = 0 ; i < Sc;i++ )\n+    {\n+        cout<<\"Student Name :\" <<std[i]<<\" Marks: \"<<stdm[i]<<endl;\n+    }\n+return 0;\n+}\n+"
+                }
+            ]
+        },
+        {
+            "commit_hash": "6488f68847de66d8170c4ba82759a645570ecda5",
+            "message": "initialize Readme.txt with title of project",
+            "author": {
+                "name": "MichTechAahe02",
+                "email": "michaahe20192@gmail.com"
+            },
+            "timestamp": "2024-11-10T07:57:26+00:00",
+            "previous_commit": null,
+            "files_changed": [
+                {
+                    "filename": "Readme.txt",
+                    "status": "added",
+                    "additions": 1,
+                    "deletions": 0,
+                    "changes": 1,
+                    "patch": "@@ -0,0 +1 @@\n+This project is to Rank the student"
+                }
+            ]
+        }
+    ]
+}]}
