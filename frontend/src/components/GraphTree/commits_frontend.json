@@ -1,0 +1,336 @@
+{
+  "repository": "Student-Ranking-System",
+  "branches": [
+    {
+      "branch": "Pair_approach",
+      "commits": [
+        {
+          "commit_hash": "c8707f0b3d9818d98be4aac37a12c09faeb4d0a3",
+          "message": "Slow Rendering issue fixed\n\nThe pair approach is faster than the array approach because of tight binding.",
+          "author": {
+            "name": "KvAney",
+            "email": "87108234+KvAney@users.noreply.github.com"
+          },
+          "previous_commits": [
+            "1658a30099dd0d3c1a328a1407507205ca1413ad"
+          ]
+        },
+        {
+          "commit_hash": "1658a30099dd0d3c1a328a1407507205ca1413ad",
+          "message": "Logging to understand code",
+          "author": {
+            "name": "KvAney",
+            "email": "kaiwalya.aney@gmail.com"
+          },
+          "previous_commits": [
+            "1509f29421ed0c97722ffe70fd3a4aa8f76d3b62"
+          ]
+        },
+        {
+          "commit_hash": "1509f29421ed0c97722ffe70fd3a4aa8f76d3b62",
+          "message": "Logging for understanding of code",
+          "author": {
+            "name": "KvAney",
+            "email": "kaiwalya.aney@gmail.com"
+          },
+          "previous_commits": [
+            "44ea4b589ba8be3bf0d285869fbcf7239272f8a1"
+          ]
+        },
+        {
+          "commit_hash": "44ea4b589ba8be3bf0d285869fbcf7239272f8a1",
+          "message": "Wrote logic of Selection sort to create a descending ranking list on basis of Marks.\n\nUsed Selection Sort algorithm to swap and sort the student details.",
+          "author": {
+            "name": "MichTechAahe02",
+            "email": "michaahe20192@gmail.com"
+          },
+          "previous_commits": [
+            "284ac5528f2d605559da3505bcbfe00a5e09422e"
+          ]
+        },
+        {
+          "commit_hash": "284ac5528f2d605559da3505bcbfe00a5e09422e",
+          "message": "Initialize data structures to take input of name and mark of students\n\nHas for loops for inputting student name data & marks data.",
+          "author": {
+            "name": "MichTechAahe02",
+            "email": "michaahe20192@gmail.com"
+          },
+          "previous_commits": [
+            "6488f68847de66d8170c4ba82759a645570ecda5"
+          ]
+        },
+        {
+          "commit_hash": "6488f68847de66d8170c4ba82759a645570ecda5",
+          "message": "initialize Readme.txt with title of project",
+          "author": {
+            "name": "MichTechAahe02",
+            "email": "michaahe20192@gmail.com"
+          },
+          "previous_commits": []
+        }
+      ]
+    },
+    {
+      "branch": "St_detail",
+      "commits": [
+        {
+          "commit_hash": "5ff9bccc6b83c356f450f500a79844fba46b5f75",
+          "message": "Update ListRanking.cpp with updated getline",
+          "author": {
+            "name": "TechnoGeek013",
+            "email": "michaahe20191@gmail.com"
+          },
+          "previous_commits": [
+            "79c6c8fbdfa79a3d745ffd6fa67df68e22b42ffe"
+          ]
+        },
+        {
+          "commit_hash": "79c6c8fbdfa79a3d745ffd6fa67df68e22b42ffe",
+          "message": "Update ListRanking.cpp to concatenate firstname and lastname variables",
+          "author": {
+            "name": "TechnoGeek013",
+            "email": "michaahe20191@gmail.com"
+          },
+          "previous_commits": [
+            "06d59e5cbd5bb10261d4eb1f1ffc4365f87b3ac9"
+          ]
+        },
+        {
+          "commit_hash": "06d59e5cbd5bb10261d4eb1f1ffc4365f87b3ac9",
+          "message": "Update Readme.txt",
+          "author": {
+            "name": "MichTechAahe02",
+            "email": "michaahe20192@gmail.com"
+          },
+          "previous_commits": [
+            "93bfb8e572aad44263a6d8b91e6fe8d9222bb821"
+          ]
+        },
+        {
+          "commit_hash": "93bfb8e572aad44263a6d8b91e6fe8d9222bb821",
+          "message": "Merge pull request #2 from MichTechAahe02/Pair_approach\n\nIssue fixed Slow Rendering and Sorting",
+          "author": {
+            "name": "MichTechAahe02",
+            "email": "michaahe20192@gmail.com"
+          },
+          "previous_commits": [
+            "44ea4b589ba8be3bf0d285869fbcf7239272f8a1",
+            "c8707f0b3d9818d98be4aac37a12c09faeb4d0a3"
+          ]
+        },
+        {
+          "commit_hash": "c8707f0b3d9818d98be4aac37a12c09faeb4d0a3",
+          "message": "Slow Rendering issue fixed\n\nThe pair approach is faster than the array approach because of tight binding.",
+          "author": {
+            "name": "KvAney",
+            "email": "87108234+KvAney@users.noreply.github.com"
+          },
+          "previous_commits": [
+            "1658a30099dd0d3c1a328a1407507205ca1413ad"
+          ]
+        },
+        {
+          "commit_hash": "1658a30099dd0d3c1a328a1407507205ca1413ad",
+          "message": "Logging to understand code",
+          "author": {
+            "name": "KvAney",
+            "email": "kaiwalya.aney@gmail.com"
+          },
+          "previous_commits": [
+            "1509f29421ed0c97722ffe70fd3a4aa8f76d3b62"
+          ]
+        },
+        {
+          "commit_hash": "1509f29421ed0c97722ffe70fd3a4aa8f76d3b62",
+          "message": "Logging for understanding of code",
+          "author": {
+            "name": "KvAney",
+            "email": "kaiwalya.aney@gmail.com"
+          },
+          "previous_commits": [
+            "44ea4b589ba8be3bf0d285869fbcf7239272f8a1"
+          ]
+        },
+        {
+          "commit_hash": "44ea4b589ba8be3bf0d285869fbcf7239272f8a1",
+          "message": "Wrote logic of Selection sort to create a descending ranking list on basis of Marks.\n\nUsed Selection Sort algorithm to swap and sort the student details.",
+          "author": {
+            "name": "MichTechAahe02",
+            "email": "michaahe20192@gmail.com"
+          },
+          "previous_commits": [
+            "284ac5528f2d605559da3505bcbfe00a5e09422e"
+          ]
+        },
+        {
+          "commit_hash": "284ac5528f2d605559da3505bcbfe00a5e09422e",
+          "message": "Initialize data structures to take input of name and mark of students\n\nHas for loops for inputting student name data & marks data.",
+          "author": {
+            "name": "MichTechAahe02",
+            "email": "michaahe20192@gmail.com"
+          },
+          "previous_commits": [
+            "6488f68847de66d8170c4ba82759a645570ecda5"
+          ]
+        },
+        {
+          "commit_hash": "6488f68847de66d8170c4ba82759a645570ecda5",
+          "message": "initialize Readme.txt with title of project",
+          "author": {
+            "name": "MichTechAahe02",
+            "email": "michaahe20192@gmail.com"
+          },
+          "previous_commits": []
+        }
+      ]
+    },
+    {
+      "branch": "main",
+      "commits": [
+        {
+          "commit_hash": "6f0b10331233d22b003564a8a11309d032db88cb",
+          "message": "Update Readme.txt with latest implementation of structure information",
+          "author": {
+            "name": "MichTechAahe02",
+            "email": "michaahe20192@gmail.com"
+          },
+          "previous_commits": [
+            "e003c8874c23e34d957422f1ec492f4e818c23c3"
+          ]
+        },
+        {
+          "commit_hash": "e003c8874c23e34d957422f1ec492f4e818c23c3",
+          "message": "Update ListRanking.cpp by creating a structure that holds student details with fullname and marks as members\n\nThis code defines a Student structure with fullname and marks as members. It reads the count of students and then, for each student, collects their full name and marks. All students are stored in a vector, and the sortStudents function sorts this vector in descending order of marks using a custom comparator. After sorting, the code prints the initial and sorted lists, showing each student's name and marks. The use of cin.ignore() ensures that input is correctly handled for multi-word names.",
+          "author": {
+            "name": "MichTechAahe02",
+            "email": "michaahe20192@gmail.com"
+          },
+          "previous_commits": [
+            "721d88cc944babef18b91a9e2abd746ea1597a25"
+          ]
+        },
+        {
+          "commit_hash": "721d88cc944babef18b91a9e2abd746ea1597a25",
+          "message": "Merge pull request #4 from MichTechAahe02/St_detail\n\nIssue Fixed of Not able to input Lastname",
+          "author": {
+            "name": "MichTechAahe02",
+            "email": "michaahe20192@gmail.com"
+          },
+          "previous_commits": [
+            "06d59e5cbd5bb10261d4eb1f1ffc4365f87b3ac9",
+            "5ff9bccc6b83c356f450f500a79844fba46b5f75"
+          ]
+        },
+        {
+          "commit_hash": "5ff9bccc6b83c356f450f500a79844fba46b5f75",
+          "message": "Update ListRanking.cpp with updated getline",
+          "author": {
+            "name": "TechnoGeek013",
+            "email": "michaahe20191@gmail.com"
+          },
+          "previous_commits": [
+            "79c6c8fbdfa79a3d745ffd6fa67df68e22b42ffe"
+          ]
+        },
+        {
+          "commit_hash": "79c6c8fbdfa79a3d745ffd6fa67df68e22b42ffe",
+          "message": "Update ListRanking.cpp to concatenate firstname and lastname variables",
+          "author": {
+            "name": "TechnoGeek013",
+            "email": "michaahe20191@gmail.com"
+          },
+          "previous_commits": [
+            "06d59e5cbd5bb10261d4eb1f1ffc4365f87b3ac9"
+          ]
+        },
+        {
+          "commit_hash": "06d59e5cbd5bb10261d4eb1f1ffc4365f87b3ac9",
+          "message": "Update Readme.txt",
+          "author": {
+            "name": "MichTechAahe02",
+            "email": "michaahe20192@gmail.com"
+          },
+          "previous_commits": [
+            "93bfb8e572aad44263a6d8b91e6fe8d9222bb821"
+          ]
+        },
+        {
+          "commit_hash": "93bfb8e572aad44263a6d8b91e6fe8d9222bb821",
+          "message": "Merge pull request #2 from MichTechAahe02/Pair_approach\n\nIssue fixed Slow Rendering and Sorting",
+          "author": {
+            "name": "MichTechAahe02",
+            "email": "michaahe20192@gmail.com"
+          },
+          "previous_commits": [
+            "44ea4b589ba8be3bf0d285869fbcf7239272f8a1",
+            "c8707f0b3d9818d98be4aac37a12c09faeb4d0a3"
+          ]
+        },
+        {
+          "commit_hash": "c8707f0b3d9818d98be4aac37a12c09faeb4d0a3",
+          "message": "Slow Rendering issue fixed\n\nThe pair approach is faster than the array approach because of tight binding.",
+          "author": {
+            "name": "KvAney",
+            "email": "87108234+KvAney@users.noreply.github.com"
+          },
+          "previous_commits": [
+            "1658a30099dd0d3c1a328a1407507205ca1413ad"
+          ]
+        },
+        {
+          "commit_hash": "1658a30099dd0d3c1a328a1407507205ca1413ad",
+          "message": "Logging to understand code",
+          "author": {
+            "name": "KvAney",
+            "email": "kaiwalya.aney@gmail.com"
+          },
+          "previous_commits": [
+            "1509f29421ed0c97722ffe70fd3a4aa8f76d3b62"
+          ]
+        },
+        {
+          "commit_hash": "1509f29421ed0c97722ffe70fd3a4aa8f76d3b62",
+          "message": "Logging for understanding of code",
+          "author": {
+            "name": "KvAney",
+            "email": "kaiwalya.aney@gmail.com"
+          },
+          "previous_commits": [
+            "44ea4b589ba8be3bf0d285869fbcf7239272f8a1"
+          ]
+        },
+        {
+          "commit_hash": "44ea4b589ba8be3bf0d285869fbcf7239272f8a1",
+          "message": "Wrote logic of Selection sort to create a descending ranking list on basis of Marks.\n\nUsed Selection Sort algorithm to swap and sort the student details.",
+          "author": {
+            "name": "MichTechAahe02",
+            "email": "michaahe20192@gmail.com"
+          },
+          "previous_commits": [
+            "284ac5528f2d605559da3505bcbfe00a5e09422e"
+          ]
+        },
+        {
+          "commit_hash": "284ac5528f2d605559da3505bcbfe00a5e09422e",
+          "message": "Initialize data structures to take input of name and mark of students\n\nHas for loops for inputting student name data & marks data.",
+          "author": {
+            "name": "MichTechAahe02",
+            "email": "michaahe20192@gmail.com"
+          },
+          "previous_commits": [
+            "6488f68847de66d8170c4ba82759a645570ecda5"
+          ]
+        },
+        {
+          "commit_hash": "6488f68847de66d8170c4ba82759a645570ecda5",
+          "message": "initialize Readme.txt with title of project",
+          "author": {
+            "name": "MichTechAahe02",
+            "email": "michaahe20192@gmail.com"
+          },
+          "previous_commits": []
+        }
+      ]
+    }
+  ]
+}
